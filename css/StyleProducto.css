@@ -1,0 +1,39 @@
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main{
+    flex-grow: 1;
+}
+
+/* navbar */
+body{
+    background-image:linear-gradient(to right, #2B1845, #1C1233, #271743, #2F0536 );
+} 
+/* .navbar{
+    position: fixed;
+} */
+.nav-link{
+    color: rgb(198, 198, 198);
+  
+}
+.nav-link:hover{
+    color: #9E7CE6 ;
+   transition-duration: 300ms;
+}
+.navbar-toggler{  border-color: white;
+ border-width: 3px;
+}
+.navbar-toggler-icon{
+    width: 1.3em;
+    height: 1.5em;
+}
+/* footer */
+.hoverIconsRedesSociales{
+    color: white;
+}
+.hoverIconsRedesSociales:hover{
+    color: #989898;
+    transition-duration: 500ms;
+}

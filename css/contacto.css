@@ -1,0 +1,340 @@
+:root {
+    --violet: #8858ed;
+    --blue: #190f30;
+    --violet-1: #35053e;
+    --white: #ffffff;
+    --black: #000000;
+    --rythm: #7c7c92;
+  }
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--black);
+  }
+  /* NAVBAR */
+  .nav-link {
+    color: rgb(198, 198, 198);
+  }
+  .nav-link:hover {
+    color: #9e7ce6;
+    transition-duration: 300ms;
+  }
+  .navbar-toggler {
+    border-color: white;
+    border-width: 2px;
+  }
+  .navbar-toggler-icon {
+    width: 1.3em;
+    height: 1.5em;
+  }
+  /* CONTACTO */
+  #textH1 h1 {
+    font-weight: bold;
+    color: var(--white);
+    font-size: 3rem;
+    padding: 60px 0 20px 0;
+  }
+  #contact {
+    color: var(--white);
+    font-size: 16px;
+  }
+  #title {
+    font-size: 1.1rem;
+  }
+  /* FORM - CONTROL */
+  .f-control {
+    border-color: var(--violet);
+    border-start-end-radius: 100px 100px;
+    border-start-start-radius: 100px;
+    padding-right: 0px;
+    font-size: 16px;
+  }
+  .f-control:hover {
+    background-color: var(--violet);
+    border-color: var(--white);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #35053e;
+  }
+  .f-control:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #35053e;
+  }
+  .f-control::placeholder {
+    color: white;
+  }
+  .form-floating:hover {
+    background-color: var(--violet);
+    border-color: var(--white);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #35053e;
+  }
+  .form-floating:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #35053e;
+  }
+  #btnSubmit {
+    background-color: var(--violet);
+    color: var(--white);
+    border-color: none;
+  }
+  #btnSubmit:hover {
+    background-color: var(--violet);
+    border-color: var(--white);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #35053e;
+  }
+  #btnSubmit:focus {
+    border-color: var(--violet);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #35053e;
+  }
+  textarea {
+    resize: none;
+  }
+  @media all and (max-width: 992px) {
+    .form-control {
+      border-radius: 0%;
+    }
+  }
+  @media all and (max-width: 768px) {
+    .form-control {
+      border-radius: 0%;
+    }
+  }
+  /* FORM SEARCH*/
+  .search-click {
+    outline: none;
+    border-radius: 10px;
+    width: 250px;
+    height: 30px;
+    padding: 25px;
+    transition: all 0.5s;
+    background-color: transparent;
+  }
+  .search-click:focus {
+    width: 100%;
+    padding-left: 50px;
+  }
+  .search-click {
+    position: relative;
+    overflow: hidden;
+    height: 30px;
+  }
+  .search-click input {
+    background: transparent;
+    border: 1px solid #ccc;
+    outline: none;
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    left: 0%;
+    padding: 10px;
+  }
+  /* SECTION BACKGROUND */
+  .background {
+    background-image: linear-gradient(
+      to left top,
+      #190f30,
+      #1d0f33,
+      #220e36,
+      #270c39,
+      #2d0a3b,
+      #2d0a3b,
+      #2d0a3b,
+      #2d0a3b,
+      #270c39,
+      #220e36,
+      #1d0f33,
+      #190f30
+    );
+    height: auto;
+  }
+  /* PREGUNTAS COMUNES */
+  #general {
+    color: var(--violet);
+  }
+  #accordion1 button {
+    color: var(--white);
+    background: transparent;
+    border-color: #8858ed;
+  }
+  #accordion2 button {
+    color: var(--white);
+    background: transparent;
+    border-color: #8858ed;
+  }
+  .accordion-body {
+    color: white;
+    background-color: transparent;
+    background: transparent;
+  }
+  .accordion {
+    --bs-accordion-btn-bg: transparent;
+    --bs-accordion-active-bg: transparent;
+    color: var(--white);
+    --bs-accordion-bg: transparent;
+    --bs-accordion-btn-icon: var(var(--white));
+    --bs-accordion-button-icon: var(--violet-1);
+    --bs-accordion-btn-focus-box-shadow: var(--violet-1);
+    --bs-accordion-border-color: var(--violet);
+  }
+  .accordion-item {
+    --bs-accordion-btn-bg: transparent;
+    --bs-accordion-active-bg: transparent;
+    color: var(--white);
+    --bs-accordion-bg: transparent;
+    --bs-accordion-btn-icon: var(var(--white));
+  }
+  .accordion-button:not(.collapsed) {
+    box-shadow: none;
+    color: var(--white);
+  }
+  .accordion-button::after {
+    content: "";
+    background-image: url(../img/chevron1.svg);
+    transform: scale(1.2);
+    border-radius: 0px;
+    transition: 0.5s !important;
+  }
+  .accordion-button:not(.collapsed)::after {
+    content: "";
+    background-image: url(../img/chevron.svg);
+    transform: scale(1.2);
+    border-radius: 0px;
+    transition: 0.5s !important;
+  }
+  #textH3 h3 {
+    font-weight: bold;
+    color: var(--white);
+    font-size: 2.5rem;
+    padding: 60px 0 20px 0;
+  }
+  ol {
+    list-style-position: inside;
+  }
+  /* BTN CHAT */
+  .open_button {
+    width: 55px;
+    height: 55px;
+    padding: 16px 20px;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: var(--violet);
+  }
+  .open_button i {
+    display: inline-flex;
+    margin-right: 5px;
+  }
+  .chat_popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+  }
+  .form_container {
+    max-width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    color: #000000;
+    background-color: var(--black);
+  }
+  .form_container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: var(--black);
+    resize: none;
+    min-height: 200px;
+    font-size: 16px;
+  }
+  ::placeholder {
+    color: white;
+  }
+  .form_container h2 {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .form_container textarea:focus {
+    background-color: black;
+    outline: none;
+  }
+  .form_container textarea:hover {
+    background-color: var(--violet);
+    outline: none;
+  }
+  .form_container .btn {
+    width: 100%;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    background-color: var(--violet);
+  }
+  .form_container .btnCancel {
+    width: 100%;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: #ffffff;
+    font-weight: 700;
+    background-color: red;
+  }
+  .form-container .btn:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+  }
+  .form-container .btnCancel {
+    background-color: red;
+  }
+  #formChat {
+    color: var(--white);
+    width: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  #formChat img{
+    width: 30px;
+    padding-right: 0px; 
+    margin-top: 0px;
+  } 
+  #msg {
+    color: var(--white);
+    width: 150px;
+    font-size: 0.8rem;
+  }
+  .buttonChatClose {
+    float: right;
+    margin-right: 15px;
+    cursor: pointer;
+  }
+  /* FOOTER  */
+  .hoverIconsRedesSociales {
+    color: white;
+  }
+  .hoverIconsRedesSociales:hover {
+    color: #989898;
+    transition-duration: 500ms;
+  }
+  

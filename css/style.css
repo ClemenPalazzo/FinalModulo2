@@ -1,0 +1,264 @@
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+main{
+    flex-grow: 1;
+}
+
+/* navbar */
+body{
+    background-color: #000000;
+} 
+
+.nav-link:hover{
+    color: #9E7CE6 ;
+   transition-duration: 300ms;
+}
+
+.navbar-toggler-icon{
+    width: 1.3em;
+    height: 1.5em;
+}
+/* footer */
+.hoverIconsRedesSociales{
+    color: white;
+}
+.hoverIconsRedesSociales:hover{
+    color: #989898;
+    transition-duration: 500ms;
+}
+
+
+
+.banner {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.card-body {
+    text-align: center;
+}
+
+
+.btn-primary {
+    background-color: #6e24cf;
+    border-color: #6e24cf;
+}
+
+.navbar-custom {
+    background-color: #343a40;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Carrusel */
+.carousel-inner .card {
+    height: 100%;
+}
+
+.carousel-inner .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.category-card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.category-card {
+    background-color: #1e1e1e;
+    border: none;
+}
+
+.bg-violet {
+    background-image: linear-gradient(to bottom, #663399, #000000);
+    color: white;
+    width: 100%;
+    margin: 0 auto;
+}
+.bg-image {
+    background-image: url('/img/halo-infinite-2590383.webp');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 800px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .bg-image h4 {
+    font-weight: bold;
+  }
+
+.category-card {
+    height: 600px;
+}
+
+.category-card .card-img-top {
+    height: 100%;
+    object-fit: cover;
+}
+
+.cards {
+    height: 100%;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Estilos para ofertas destacadas */
+.highlighted-offers {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.highlighted-offers h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.offer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.offer-card {
+    background-color: #6a1b9a; /* Color de fondo de la tarjeta */
+    color: white; /* Color del texto */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.offer-card h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.offer-images {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.offer-images img {
+    max-width: 100px;
+    border-radius: 10px;
+}
+
+/* Estilos para Explora y Ahorra */
+.explore-save {
+    background-color: #000;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin: 50px 0;
+}
+
+.explore-save h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.explore-save p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.explore-save .btn-primary {
+    background-color: #6a1b9a;
+    border-color: #6a1b9a;
+}
+
+.explore-save .btn-primary:hover {
+    background-color: #501a7d;
+    border-color: #501a7d;
+}
+
+
+
+
+/* Estilos para ofertas destacadas */
+.highlighted-offers {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.highlighted-offers h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.offer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.offer-card {
+    background-color: #6a1b9a; /* Color de fondo de la tarjeta */
+    color: white; /* Color del texto */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.offer-card h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.offer-images {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.offer-images img {
+    max-width: 100px;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    #publicidadCarousel {
+      display: none; /* Oculta el carrusel en dispositivos con ancho de pantalla de 768px o menos */
+    }
+  }

@@ -1,0 +1,89 @@
+/* Recordatorio borrar el comentario del final */
+
+.accordion {
+    --bs-accordion-btn-bg: rgb(58, 33, 89);
+    --bs-accordion-border-color: rgb(0, 0, 0);
+    --bs-accordion-bg: rgb(0, 0, 0);
+    --bs-accordion-color: rgb(124, 124, 124);
+    --bs-accordion-btn-color: rgb(255, 255, 255);
+    --bs-accordion-btn-focus-box-shadow: rgb(0, 0, 0);
+    --bs-accordion-active-bg: rgb(134, 53, 180);
+    --bs-accordion-active-color: rgb(255, 255, 255);
+  }
+  
+  .contenedorPerfil {
+    display: flex;
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 200px;
+    padding: 0;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  .contenedorHijo {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    padding: 0;
+  }
+  .contenedorDeLogo {
+    display: flex;
+    width: 150px;
+  }
+  
+  /* navbar */
+  
+  .nav-link {
+    color: rgb(198, 198, 198);
+  }
+  .nav-link:hover {
+    color: #9e7ce6;
+    transition-duration: 300ms;
+  }
+  .navbar-toggler {
+    border-color: white;
+    border-width: 2px;
+  }
+  .navbar-toggler-icon {
+    width: 1.3em;
+    height: 1.5em;
+  }
+  
+  @media screen and (min-height: 600px) and (max-width: 1024px) {
+    a img.w-50 {
+      width: 100% !important;
+    }
+  }
+  
+  @media screen and (min-height: 1024px) and (max-width: 1366px) {
+    a img.w-50 {
+      width: 100% !important;
+    }
+    a p.w-50 {
+      width: 100% !important;
+    }
+  }
+  
+  /* footer */
+  .hoverIconsRedesSociales {
+    color: white;
+  }
+  @media screen and (min-height: 540px) and (max-width: 720px) {
+    .w-75 {
+      width: 50% !important;
+    }
+  }
+  
+  .hoverIconsRedesSociales:hover {
+    color: #989898;
+    transition-duration: 500ms;
+  }
+  
+  /* Colores a usar */
+  /* --violet: #8858ed;
+  --blue: #190f30;
+  --violet-1: #35053e;
+  --white: #ffffff;
+  --black: #000000;
+  --rythm: #7c7c92; */
+  
