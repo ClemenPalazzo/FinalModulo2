@@ -103,16 +103,13 @@ body{
     margin: 0 auto;
 }
 .bg-image {
-    background-image: url('/img/halo-infinite-2590383.webp');
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 800px;
-    margin: 0 auto;
+    background: url('../img/halo-infinite-2590383.webp') no-repeat center center/cover;
+    background-attachment: fixed;
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    position: relative;
   }
   
   .bg-image h4 {
@@ -128,9 +125,7 @@ body{
     object-fit: cover;
 }
 
-.cards {
-    height: 100%;
-}
+
 
 .card-img-top {
     height: 200px;
@@ -262,3 +257,56 @@ body{
       display: none; /* Oculta el carrusel en dispositivos con ancho de pantalla de 768px o menos */
     }
   }
+
+
+  .banner {
+    background: url('../img/StrayGato.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .banner-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+  }
+  
+
+  
+  .card-img-top {
+    height: 200px; /* Ajusta la altura de la imagen según lo necesites */
+    object-fit: cover; /* Esto asegurará que la imagen se recorte correctamente si es necesario */
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+
+  /* Estilos personalizados para las tarjetas tipo video juego */
+  .card-video-game {
+    border: none;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.card-video-game img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.card-video-game:hover img {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
