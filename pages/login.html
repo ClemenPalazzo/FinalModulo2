@@ -25,8 +25,6 @@
 </head>
 
 <body>
-
-
  <header>
             <nav class="navbar navbar-expand-lg pt-md-4 px-md-5 bg-black">
                 <div class="container-fluid justify-content-end justify-content-md-center justify-content-between">
@@ -197,7 +195,6 @@
             </div>
         
           </div>
-
     <main>
         <section class="container-fluid text-center">
             <article class="my-3">
@@ -209,19 +206,19 @@
                     </div>
                     <div class="col-12 col-md-6 align-content-center">
                       <h2 class="fw-bold">Ingresa a tu cuenta</h2>
-                        <form class="text-start">
+                        <form id="formLogin" class="text-start">
                             <div class="mb-3">
                                 <label class="form-label">Email</label>
-                                <input type="email" class="form-control border-input bg-body-secondary"
+                                <input id="emailL" type="email" class="form-control border-input bg-body-secondary"
                                     placeholder="Ej: juanperez@hardDrive" minlength="15" maxlength="320" required />
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Contraseña</label>
-                                <input type="password" class="form-control border-input bg-body-secondary"
+                                <input id="passwordL" type="password" class="form-control border-input bg-body-secondary"
                                     placeholder="juan$Perez328" minlength="8" maxlength="16" required />
                             </div>
                             <div class="text-center mb-2">
-                                <a href="./pages/Erro404.html"><button class="buttoncomprar">Entrar</button></a>
+                                <button type="submit" class="buttoncomprar">Entrar</button>
                             </div>
                         </form>
                         <div>
@@ -483,10 +480,11 @@
         </div>
       </div>
 </footer>
-<script src="../js/app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+crossorigin="anonymous"></script>
+<script src="../js/app.js"></script>
+<script src="../js/login.js" type="module"></script>
 </body>
 
 </html>

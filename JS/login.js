@@ -1,35 +1,20 @@
 import { Contacto } from "./classContactos.js";
 
-//Variables
-const Administrador = new Contacto ('Damian', 'Barreiro','Damianb@gmail.com','D1234','')
+//Variables 
+const Administrador = new Contacto ('Santiago', 'Rodriguez', 'Santirod7','santiara010@gmail.com','3813566953','santi123','hola')
 console.log(Administrador)
-const formularioRegistro = document.getElementById('formRegistro');
-const nombre = document.getElementById('nombre');
-const apellido = document.getElementById('apellido');
-const nombreUsuario = document.getElementById('nombreUsuario');
-const email = document.getElementById('email');
-const telefono = document.getElementById('telefono');
-const password = document.getElementById('password');
-const rpassword = document.getElementById('rpassword');
-const foto = document.getElementById('foto');
-const listaUsuario = []
 
+const formularioLogin = document.getElementById('formLogin');
+const emailL = document.getElementById('emailL');
+const passwordL = document.getElementById('passwordL');
 
-//Funciones
-const crearUsuario = (e) => {
-e.preventDefault();
-console.log("Desde la funcion crear contacto");
-const nuevoUsuario= new Contacto(nombre.value, apellido.value, nombreUsuario.value, email.value, telefono.value, password.value, rpassword.value, foto.value)
-console.log(nuevoUsuario);
-listaUsuario.push(nuevoUsuario)
-console.log(listaUsuario);
-limpiarForm();
-localStorage.setItem('key',JSON.stringify(listaUsuario));
+//funciones login
+const analizarCuenta = (e) =>{
+    e.preventDefault();
+    if (emailL.value === Administrador.mail && passwordL.value === Administrador.contraseña){
+console.log("dentro del if")
+window.location.href = '../index.html'
+    }
 }
-const limpiarForm = () => {
-    formularioRegistro.reset()
-}
-
-
-//lógica del crud
-formularioRegistro.addEventListener('submit',crearUsuario)
+//logica del crud (Login)
+formularioLogin.addEventListener('submit',analizarCuenta)
