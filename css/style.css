@@ -141,18 +141,13 @@ main {
 }
 
 .bg-image {
-<<<<<<< HEAD
     background: url('../img/BanerTriangulos.jpg') no-repeat center center/cover;
-=======
-    background: url('../img/halo-infinite-2590383.webp') no-repeat center center/cover;
->>>>>>> 620ad05cae5dafdbe0db19e48b0bbbf1bc960e51
     background-attachment: fixed;
     height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-<<<<<<< HEAD
   }
   
   .bg-image h4 {
@@ -177,15 +172,6 @@ main {
 }
 
 /* Estilos para ofertas destacadas */
-=======
-}
-
-.bg-image h4 {
-    font-weight: bold;
-}
-
-/* Highlighted Offers */
->>>>>>> 620ad05cae5dafdbe0db19e48b0bbbf1bc960e51
 .highlighted-offers {
     text-align: center;
     margin: 50px 0;
@@ -258,7 +244,6 @@ main {
     border-color: #501a7d;
 }
 
-<<<<<<< HEAD
 
 
 
@@ -362,15 +347,8 @@ main {
 }
 
 
-=======
-/* Media Queries */
->>>>>>> 620ad05cae5dafdbe0db19e48b0bbbf1bc960e51
 @media (max-width: 768px) {
     #publicidadCarousel {
         display: none; /* Oculta el carrusel en dispositivos con ancho de pantalla de 768px o menos */
     }
-<<<<<<< HEAD
   }
-=======
-}
->>>>>>> 620ad05cae5dafdbe0db19e48b0bbbf1bc960e51
