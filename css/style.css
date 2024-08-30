@@ -1,81 +1,115 @@
-body{
+body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    
+    background-color: #000000;
 }
-main{
+
+main {
     flex-grow: 1;
 }
 
-/* navbar */
-body{
-    background-color: #000000;
-} 
-
-.nav-link:hover{
-    color: #9E7CE6 ;
-   transition-duration: 300ms;
+/* Navbar */
+.nav-link:hover {
+    color: #9E7CE6;
+    transition-duration: 300ms;
 }
 
-.navbar-toggler-icon{
+.navbar-toggler-icon {
     width: 1.3em;
     height: 1.5em;
 }
-/* footer */
-.hoverIconsRedesSociales{
+
+/* Footer */
+.hoverIconsRedesSociales {
     color: white;
 }
-.hoverIconsRedesSociales:hover{
+
+.hoverIconsRedesSociales:hover {
     color: #989898;
     transition-duration: 500ms;
 }
 
-
-
+/* Banner */
 .banner {
-    position: relative;
-    height: 100vh;
+    background: url('../img/stray-videojuego-11726.webp') no-repeat center center/cover;
+    background-attachment: fixed;
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    overflow: hidden;
-}
-
-.banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    position: relative;
 }
 
 .banner-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
 }
 
+/* Cards */
 .card-body {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-
-.btn-primary {
-    background-color: #6e24cf;
-    border-color: #6e24cf;
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
 }
 
-.navbar-custom {
-    background-color: #343a40;
+/* Video Game Cards */
+.card-video-game {
+    border: 2px solid #444;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #1c1c1c;
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.text-center {
-    text-align: center;
+.card-video-game img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    flex-grow: 1;
 }
 
-/* Carrusel */
+.card-video-game .card-body {
+    background-color: transparent;
+    padding: 15px;
+    flex-shrink: 0;
+}
+
+.card-video-game .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-video-game .card-text {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.card-video-game .btn {
+    background-color: #9900ff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.card-video-game:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Carousel */
 .carousel-inner .card {
     height: 100%;
 }
@@ -85,31 +119,40 @@ body{
     object-fit: cover;
 }
 
+/* Categories */
+.category-card {
+    background-color: #1e1e1e;
+    border: none;
+    height: 600px;
+}
+
 .category-card img {
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
 
-.category-card {
-    background-color: #1e1e1e;
-    border: none;
-}
-
+/* Backgrounds */
 .bg-violet {
     background-image: linear-gradient(to bottom, #663399, #000000);
     color: white;
     width: 100%;
     margin: 0 auto;
 }
+
 .bg-image {
+<<<<<<< HEAD
     background: url('../img/BanerTriangulos.jpg') no-repeat center center/cover;
+=======
+    background: url('../img/halo-infinite-2590383.webp') no-repeat center center/cover;
+>>>>>>> 620ad05cae5dafdbe0db19e48b0bbbf1bc960e51
     background-attachment: fixed;
     height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+<<<<<<< HEAD
   }
   
   .bg-image h4 {
@@ -134,6 +177,15 @@ body{
 }
 
 /* Estilos para ofertas destacadas */
+=======
+}
+
+.bg-image h4 {
+    font-weight: bold;
+}
+
+/* Highlighted Offers */
+>>>>>>> 620ad05cae5dafdbe0db19e48b0bbbf1bc960e51
 .highlighted-offers {
     text-align: center;
     margin: 50px 0;
@@ -151,8 +203,8 @@ body{
 }
 
 .offer-card {
-    background-color: #6a1b9a; /* Color de fondo de la tarjeta */
-    color: white; /* Color del texto */
+    background-color: #6a1b9a;
+    color: white;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -177,7 +229,7 @@ body{
     border-radius: 10px;
 }
 
-/* Estilos para Explora y Ahorra */
+/* Explore and Save */
 .explore-save {
     background-color: #000;
     color: white;
@@ -206,6 +258,7 @@ body{
     border-color: #501a7d;
 }
 
+<<<<<<< HEAD
 
 
 
@@ -309,8 +362,15 @@ body{
 }
 
 
+=======
+/* Media Queries */
+>>>>>>> 620ad05cae5dafdbe0db19e48b0bbbf1bc960e51
 @media (max-width: 768px) {
     #publicidadCarousel {
-      display: none; /* Oculta el carrusel en dispositivos con ancho de pantalla de 768px o menos */
+        display: none; /* Oculta el carrusel en dispositivos con ancho de pantalla de 768px o menos */
     }
+<<<<<<< HEAD
   }
+=======
+}
+>>>>>>> 620ad05cae5dafdbe0db19e48b0bbbf1bc960e51
