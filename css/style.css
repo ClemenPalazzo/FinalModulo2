@@ -103,7 +103,7 @@ body{
     margin: 0 auto;
 }
 .bg-image {
-    background: url('../img/halo-infinite-2590383.webp') no-repeat center center/cover;
+    background: url('../img/BanerTriangulos.jpg') no-repeat center center/cover;
     background-attachment: fixed;
     height: 50vh;
     display: flex;
@@ -117,7 +117,8 @@ body{
   }
 
 .category-card {
-    height: 600px;
+    height: 800px;
+    object-fit: cover;
 }
 
 .category-card .card-img-top {
@@ -252,15 +253,9 @@ body{
     border-radius: 10px;
 }
 
-@media (max-width: 768px) {
-    #publicidadCarousel {
-      display: none; /* Oculta el carrusel en dispositivos con ancho de pantalla de 768px o menos */
-    }
-  }
-
 
   .banner {
-    background: url('../img/StrayGato.jpg') no-repeat center center/cover;
+    background: url('../img/BanerTriangulos.jpg') no-repeat center center/cover;
     background-attachment: fixed;
     height: 50vh;
     display: flex;
@@ -297,6 +292,8 @@ body{
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
+    width: 100%;
+    height: 800px;
 }
 
 .card-video-game img {
@@ -310,3 +307,10 @@ body{
     transform: scale(1.05);
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
+
+
+@media (max-width: 768px) {
+    #publicidadCarousel {
+      display: none; /* Oculta el carrusel en dispositivos con ancho de pantalla de 768px o menos */
+    }
+  }

@@ -1,7 +1,11 @@
 // Datos de ejemplo del catálogo de productos
 const products = [
     { name: "CyberPunk", img: "./img/DayGone.jpeg", description: "Juego CyberPunk" },
+
     { name: "Beyond Two Souls", img: "./img/Beyond Two Souls Poster.jpeg", description: "Juego Beyond Two Souls" },
+
+ 
+
     { name: "Memoria RAM 16GB", img: "./img/BioInfinity.jpeg", description: "Memoria RAM 16GB" },
     { name: "Fuente de Poder 500W", img: "./img/detroit.jpeg", description: "Fuente de Poder 500W" },
     // Añade más productos aquí
