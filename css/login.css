@@ -6,4 +6,13 @@ input:hover{
   font-size: larger;
 }
 
+.contenedorimagen-lg{
+height: 700px;
+}
+
+.imagen-lg{
+object-fit: cover;
+object-position: bottom;
+}
+
   
