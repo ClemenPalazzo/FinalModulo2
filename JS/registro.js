@@ -1,4 +1,7 @@
 import { Contacto } from "./classContactos.js";
+import { validarCaracteres } from "./validacionRegistro.js";
+import { validarEmail } from "./validacionRegistro.js";
+import { validarPassword } from "./validacionRegistro.js";
 
 //Variables
 const Administrador = new Contacto ('Santiago', 'Rodriguez', 'Santirod7','santiara010@gmail.com','3813566953','santi123','hola')
@@ -19,13 +22,18 @@ const listaUsuario = JSON.parse(localStorage.getItem('listaUsuariokey')) || [];
 //Funciones Registro
 const crearUsuario = (e) => {
 e.preventDefault();
-console.log("Desde la funcion crear contacto");
-const nuevoUsuario= new Contacto(nombre.value, apellido.value, nombreUsuario.value, email.value, telefono.value, password.value, foto.value)
-console.log(nuevoUsuario);
-listaUsuario.push(nuevoUsuario)
-console.log(listaUsuario);
-limpiarForm();
-localStorage.setItem('listaUsuariokey',JSON.stringify(listaUsuario));
+if (validarCaracteres(apellido, 3, 25) && validarCaracteres(nombre,3,25) && validarCaracteres(nombreUsuario,3,20) && validarEmail(email) && validarPassword(password) && validarPassword(rpassword)){
+    if(password.value === rpassword.value){
+        const nuevoUsuario= new Contacto(nombre.value, apellido.value, nombreUsuario.value, email.value, telefono.value, password.value, foto.value)
+        console.log(nuevoUsuario);
+        listaUsuario.push(nuevoUsuario)
+        console.log(listaUsuario);
+        limpiarForm();
+        localStorage.setItem('listaUsuariokey',JSON.stringify(listaUsuario));
+        }
+    } else{
+        alert()
+    }
 }
 const limpiarForm = () => {
     formularioRegistro.reset()

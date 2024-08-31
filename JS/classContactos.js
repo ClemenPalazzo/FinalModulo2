@@ -5,17 +5,17 @@ export class Contacto {
   #nombreUsuario;
   #mail;
   #telefono
-  #contraseña;
+  #password;
   #foto;
 
-  constructor(nombre, apellido, nombreUsuario, mail, telefono, contraseña, foto) {
+  constructor(nombre, apellido, nombreUsuario, mail, telefono, password, foto) {
     this.#id = crypto.randomUUID();
     this.#nombre = nombre;
     this.#apellido = apellido;
     this.#nombreUsuario=nombreUsuario
     this.#mail = mail;
     this.#telefono = telefono;
-    this.#contraseña = contraseña;
+    this.#password = password;
     this.#foto = foto;
   }
   get id() {
@@ -54,11 +54,11 @@ export class Contacto {
   set telefono(value) {
     this.#telefono = value;
   }
-  get contraseña() {
-    return this.#contraseña;
+  get password() {
+    return this.#password;
   }
-  set contraseña(value) {
-    this.#contraseña = value;
+  set password(value) {
+    this.#password = value;
   }
   get foto() {
     return this.#foto;
