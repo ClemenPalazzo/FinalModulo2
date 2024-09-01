@@ -3,542 +3,578 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="SetUP accesorios y perifericos gamers" />
-  <meta name="keywords"  content="gamer, perifericos, componentes, pc, graficas, ram, gabinete, rgb, mouse, teclado, mecanico, auriculares" />
-  <meta name="author" content="Hard Drive" />
+    <meta name="description" content="SetUP accesorios y periféricos gamers" />
+    <meta
+      name="keywords"
+      content="gamer, perifericos, componentes, pc, graficas, ram, gabinete, rgb, mouse, teclado, mecanico, auriculares"
+    />
+    <meta name="author" content="Hard Drive" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
     />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <link rel="stylesheet" href="../css/modal.css">
-    <link rel="stylesheet" href="../css/StyleProducto.css" />
-    <link rel="stylesheet" href="../css/productos.css">
-    <link rel="stylesheet" href="../css/contacto.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/admin.css">
-
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <link rel="stylesheet" href="../css/modal.css" />
     <title>HardDrive</title>
   </head>
   <body>
     <header>
-        <nav class="navbar navbar-expand-lg pt-md-4 px-md-5 bg-black">
-          <div
-            class="container-fluid justify-content-end justify-content-md-center justify-content-between">
-            <a href="../index.html"
-              class="w-25 d-none d-lg-block text-decoration-none">
-              <img
-                src="../img/logoPrincipal.jpg"
-                alt="Logo HardDrive"
-                class="w-50"/>
-              <p class="text-center w-50 text-decoration-none text-light lead">
-                HardDrive
-              </p>
-            </a>
-            <form class="d-none d-md-block">
-              <div class="input-group">
-                <input
-                  type="search"
-                  class="form-control"
-                  placeholder="Buscar producto"
-                  aria-label="Buscar producto"
-                />
-                <button
-                  class="btn btn-outline-secondary text-light"
-                  type="button"
-                >
-                  <i class="bi bi-search"></i>
-                </button>
-              </div>
-            </form>
-            <div>
-              <a href="#" class="text-decoration-none text-light d-md-none">
-                <i
-                  class="bi bi-cart3 fs-2"
-                  data-bs-toggle="modal"
-                  data-bs-target="#mi-modal">
-                </i>
-                <!-- <i class="bi bi-cart3 fs-1 align-bottom ms-md-3 d-md-none"></i> -->
-              </a>
-              <a href="#" class="text-decoration-none text-light mx-3 d-md-none">
-                <i class="bi bi-person-circle fs-1 align-bottom"></i>
-              </a>
-              <a href="#" class="text-decoration-none text-light d-md-none">
-                <i class="bi bi-search fs-1 align-bottom me-2"></i>
-              </a>
+      <nav class="navbar navbar-expand-lg pt-md-4 px-md-5 bg-black">
+        <div
+          class="container-fluid justify-content-end justify-content-md-center justify-content-between"
+        >
+          <a
+            href="../index.html"
+            class="w-25 d-none d-lg-block text-decoration-none"
+          >
+            <img
+              src="../img/logoPrincipal.jpg"
+              alt="Logo HardDrive"
+              class="w-50"
+            />
+            <p class="text-center w-50 text-decoration-none text-light lead">
+              HardDrive
+            </p>
+          </a>
+          <form class="d-none d-md-block">
+            <div class="input-group">
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Buscar producto"
+                aria-label="Buscar producto"
+              />
               <button
-                class="navbar-toggler d-lg-none"
+                class="btn btn-outline-secondary text-light"
                 type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+              >
+                <i class="bi bi-search"></i>
               </button>
             </div>
-            <div
-              class="collapse navbar-collapse justify-content-md-end"
-              id="navbarNavDropdown">
-              <ul class="navbar-nav align-items-md-center">
-                <li class="nav-item">
-                  <a
-                    class="nav-link active fs-6 me-3"
-                    aria-current="page"
-                    href="./pages/admin.html">Administrador</a>
-                  </li>
-                  <li class="nav-item">
-                  <a
-                    class="nav-link fs-6 me-3"
-                    aria-current="page"
-                    href="./registro.html"
-                    >Registro</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link fs-6 me-3" href="./SobreNosotros.html">¿Quienes somos?</a>
-                </li>
-                <li class="nav-item dropdown fs-6">
-                  <a
-                    class="nav-link dropdown-toggle me-3"
-                    href="./pages/Productos.html"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Productos
-                  </a>
-                  <ul class="dropdown-menu bg-black py-1 border-0 rounded-0">
-                    <li>
-                      <a class="dropdown-item px-3" href="./Productos.html">Tienda</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item px-3" href="./Erro404.html">Juegos</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item px-3" href="./Erro404.html">Consolas</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item px-3" href="./Erro404.html">Controles</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item px-3" href="./Erro404.html"
-                        >Perifericos</a>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link fs-6 me-3" href="./Erro404.html"
-                    >Ofertas</a>
-                </li>
-                <li class="nav-item dropdown fs-6">
-                  <a
-                    class="nav-link dropdown-toggle me-3"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Más
-                  </a>
-                  <ul class="dropdown-menu bg-black py-1 border-0 rounded-0">
-                    <li>
-                      <a class="dropdown-item px-3" href="./contactos.html"
-                        >Contactanos</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item me-3 d-none d-md-flex">
-                  <a
-                    class="nav-link fs-6 d-inline-flex flex-row-reverse align-items-center"
-                    href="./login.html"
-                    >Entrar
-                    <i class="bi bi-person-circle pe-2 fs-2"></i>
-                  </a>
-                </li>
-                <li class="nav-item me-3 d-none d-md-flex">
-                  <a class="nav-link" href="#">
-                    <i
-                      class="bi bi-cart3 fs-2"
-                      data-bs-toggle="modal"
-                      data-bs-target="#mi-modal"
-                    >
-                    </i>
-                  </a>
-                </li>
-              </ul>
-            </div>
+          </form>
+          <div>
+            <a href="#" class="text-decoration-none text-light d-md-none">
+              <i
+                class="bi bi-cart3 fs-2"
+                data-bs-toggle="modal"
+                data-bs-target="#mi-modal"
+              ></i>
+            </a>
+            <a href="#" class="text-decoration-none text-light mx-3 d-md-none">
+              <i class="bi bi-person-circle fs-1 align-bottom"></i>
+            </a>
+            <a href="#" class="text-decoration-none text-light d-md-none">
+              <i class="bi bi-search fs-1 align-bottom me-2"></i>
+            </a>
+            <button
+              class="navbar-toggler d-lg-none"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
           </div>
-        </nav>
-      </header>
-        <!--Modal del carrito -->
-      <div class="modal fade right" id="mi-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div
+            class="collapse navbar-collapse justify-content-md-end"
+            id="navbarNavDropdown"
+          >
+            <ul class="navbar-nav align-items-md-center">
+              <li class="nav-item">
+                <a
+                  class="nav-link active fs-6 me-3"
+                  aria-current="page"
+                  href="./pages/admin.html"
+                  >Administrador</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fs-6 me-3" href="./registro.html"
+                  >Registro</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fs-6 me-3" href="./SobreNosotros.html"
+                  >¿Quiénes somos?</a
+                >
+              </li>
+              <li class="nav-item dropdown fs-6">
+                <a
+                  class="nav-link dropdown-toggle me-3"
+                  href="./pages/Productos.html"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Productos</a
+                >
+                <ul class="dropdown-menu bg-black py-1 border-0 rounded-0">
+                  <li>
+                    <a class="dropdown-item px-3" href="./Productos.html"
+                      >Tienda</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item px-3" href="./Erro404.html"
+                      >Juegos</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item px-3" href="./Erro404.html"
+                      >Consolas</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item px-3" href="./Erro404.html"
+                      >Controles</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item px-3" href="./Erro404.html"
+                      >Periféricos</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fs-6 me-3" href="./Erro404.html">Ofertas</a>
+              </li>
+              <li class="nav-item dropdown fs-6">
+                <a
+                  class="nav-link dropdown-toggle me-3"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Más</a
+                >
+                <ul class="dropdown-menu bg-black py-1 border-0 rounded-0">
+                  <li>
+                    <a class="dropdown-item px-3" href="./contactos.html"
+                      >Contáctanos</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item me-3 d-none d-md-flex">
+                <a
+                  class="nav-link fs-6 d-inline-flex flex-row-reverse align-items-center"
+                  href="./login.html"
+                  >Entrar
+                  <i class="bi bi-person-circle pe-2 fs-2"></i>
+                </a>
+              </li>
+              <li class="nav-item me-3 d-none d-md-flex">
+                <a class="nav-link" href="#">
+                  <i
+                    class="bi bi-cart3 fs-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#mi-modal"
+                  ></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="container text-center">
+        <h1 class="mt-3"><b>Administración de juegos</b></h1>
+        <h5>¡Bienvenido administrador!</h5>
+        <p>
+          Esta sección está dedicada para usted. Aquí podrá ver los juegos
+          cargados y catalogados.
+        </p>
+        <div class="container mt-5">
+          <div class="table-responsive">
+            <table id="game-table" class="table table-bordered table-striped">
+              <thead class="table-light">
+                <tr>
+                  <th>ID</th>
+                  <th>Imagen</th>
+                  <th>Nombre</th>
+                  <th>Género</th>
+                  <th>Plataforma</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Aquí se cargan los juegos desde localStorage -->
+              </tbody>
+            </table>
+          </div>
+          <div class="d-flex justify-content-center mt-3">
+            <button
+              class="btn btn-primary mb-3"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#addGameModal"
+            >
+              Agregar Nuevo Juego
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal para agregar juego -->
+      <div
+        class="modal fade"
+        id="addGameModal"
+        tabindex="-1"
+        aria-labelledby="addGameModalLabel"
+        aria-hidden="true"
+      >
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-    
-              <h1 class="modal-title" id="exampleModalLabel">CARRITO <i class="bi bi-cart3"></i></h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    
+              <h5 class="modal-title" id="addGameModalLabel">
+                Agregar Nuevo Juego
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
             <div class="modal-body">
-              <div class="container-Carrito d-flex justify-content-between">
-                <img class="imgCarrito" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmwbIgmfj1MrBxWWCXtCy3xAeJly_91uWp7Q&s" alt="Minecraft ps4">
-                <p class="precioCarrito align-content-center">$10.000</p>
-                <p class="nombreCarrito align-content-center">Minecraft Ps4</p>
-                <i class="precioCarrito bi bi-x-lg me-1"></i>
-              </div>
-              <div class="container-Carrito d-flex justify-content-between">
-                <img class="imgCarrito" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb3MV2h7HfrjuUO6HEBr8p75fhSIJgHiz_Eg&s" alt="Cs2">
-                <p class="precioCarrito align-content-center">$15.000</p>
-                <p class="nombreCarrito align-content-center">Counter Strike 2</p>
-                <i class="precioCarrito bi bi-x-lg me-1"></i>
-             </div>
-            </div>
-            <div class="modal-footer">
-              <div>
-                <h4>Total= $25.000</h4>
-                <a href="../pages/Erro404.html"><button class="buttoncomprar">COMPRAR</button></a>
-              </div>
+              <form id="game-form">
+                <div class="mb-3">
+                  <label for="game-name" class="form-label">Nombre</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="game-name"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="game-genre" class="form-label">Género</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="game-genre"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="game-platform" class="form-label"
+                    >Plataforma</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="game-platform"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="game-image" class="form-label"
+                    >URL de la Imagen</label
+                  >
+                  <input
+                    type="url"
+                    class="form-control"
+                    id="game-image"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">Agregar</button>
+              </form>
             </div>
           </div>
         </div>
       </div>
-      <main>
-        <section class="container text-center ">
-          <h1 class="mt-3"><b> Administración de juegos </b></h1>
-          <h5>¡Bienvenido administrador!</h5>
-          <p>
-             Esta sección esta dedicada para usted. Aquí podras ver los juegos cargados y catalogados
-          </p>
-          <div class="container mt-5">
-              <div class="table-responsive">
-              <table class="table table-bordered table-striped">
-                  <thead class="table-light">
-                      <tr>
-                          <th>ID</th>
-                          <th>Nombre</th>
-                          <th>Género</th>
-                          <th>Plataforma</th>
-                          <th>Acciones</th>
-                      </tr>
-                  </thead>
-                  <tbody class="">
-                      <tr class="align-middle">
-                          <td>1</td>
-                          <td>The Legend of Zelda: Breath of the Wild</td>
-                          <td>Aventura</td>
-                          <td>Nintendo Switch</td>
-                          <td>
-                                    <div class="d-flex justify-content-center">
-                                        <button class="btn btn-success me-2">Ver</button>
-                                        <button class="btn btn-warning me-2 ">Editar</button>
-                                        <button class="btn btn-danger">Borrar</button>
-                            </div>
-                          </td>
-                      </tr>
-                      <tr class="align-middle">
-                          <td>2</td>
-                          <td>Cyberpunk 2077</td>
-                          <td>RPG / Acción</td>
-                          <td>PC, PlayStation, Xbox</td>
-                          <td>
-                              <div class="d-flex justify-content-center">
-                                  <button class="btn btn-success me-2">Ver</button>
-                                  <button class="btn btn-warning me-2">Editar</button>
-                                  <button class="btn btn-danger">Borrar</button>
-                              </div>
-                          </td>
-                      </tr>
-                      <tr class="align-middle">
-                          <td>3</td>
-                          <td>Among Us</td>
-                          <td>Party Game / Multijugador</td>
-                          <td>PC, iOS, Android, Nintendo Switch</td>
-                          <td>
-                              <div class="d-flex justify-content-center">
-                                  <button class="btn btn-success me-2">Ver</button>
-                                  <button class="btn btn-warning me-2">Editar</button>
-                                  <button class="btn btn-danger">Borrar</button>
-                              </div>
-                          </td>
-                      </tr>
-                      <tr class="align-middle">
-                          <td>4</td>
-                          <td>Minecraft</td>
-                          <td>Sandbox / Supervivencia</td>
-                          <td>PC, PlayStation, Xbox, Nintendo Switch, iOS, Android</td>
-                          <td>
-                              <div class="d-flex justify-content-center">
-                                  <button class="btn btn-success me-2">Ver</button>
-                                  <button class="btn btn-warning me-2">Editar</button>
-                                  <button class="btn btn-danger">Borrar</button>
-                              </div>
-                          </td>
-                      </tr>
-                      <tr class="align-middle">
-                          <td>5</td>
-                          <td>Fortnite</td>
-                          <td>Battle Royale / Shooter</td>
-                          <td>PC, PlayStation, Xbox, Nintendo Switch, iOS, Android</td>
-                          <td>
-                              <div class="d-flex justify-content-center">
-                                  <button class="btn btn-success me-2">Ver</button>
-                                  <button class="btn btn-warning me-2">Editar</button>
-                                  <button class="btn btn-danger">Borrar</button>
-                              </div>
-                          </td>
-                      </tr>
-                  </tbody>
-              </table>
-          </div>
-              <div class="d-flex justify-content-center mt-3">
-                  <button class="btn btn-primary mb-3" type="button" data-bs-toggle="modal" data-bs-target="#agregarJuego" data-bs-whatever="@mdo"">Agregar Nuevo Juego</button>
-              </div>
-              <div class="mb-2">
-                <img class="w-100 banneradmin" src="https://files.oaiusercontent.com/file-LLdnjYhMUPfgel3e9r9HP6R3?se=2024-08-28T00%3A50%3A41Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D84d59f33-0b2f-487b-bbaf-bd52f12c8944.webp&sig=5orosdusv%2BQDgS%2ByqxyolwokRj1R0L11isdw672crvU%3D" alt="">
-              </div>
-  
-              <!-- Modal  -->
-          </div>     
-          <div class="modal fade" id="agregarJuego" tabindex="-1" aria-labelledby="modalJuego" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header text-center">
-                  <h1 class="modal-title fs-5" id="modalJuego">Datos del juego</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="mb-3 text-start">
-                      <label for="recipient-name" class="col-form-label">Nombre</label>
-                      <input type="text" class="form-control" id="recipient-name">
-                    </div>
-                    <div class="mb-3 text-start">
-                      <label for="recipient-name" class="col-form-label">Genero</label>
-                      <input type="text" class="form-control" id="recipient-name">
-                    </div>
-                    <div class="mb-3 text-start">
-                      <label for="recipient-name" class="col-form-label">Plataforma</label>
-                      <input type="text" class="form-control" id="recipient-name">
-                    </div>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
-                  <button type="button" class="btn btn-primary">Agregar</button>
-                </div>
-              </div>
-            </div>
-          </div>
-      </main>
 
-  </body>
-  <footer class="bg-black py-md-5 py-3">
-    <section class="container text-center text-md-start">
-      <div class="row">
-        <div
-          class="col-md-3 d-flex justify-content-center justify-content-md-start align-items-center mb-4 flex-column"
-        >
-        <a href="#" class="text-center text-decoration-none text-light lead">
-        </a>
-        <img src="../img/logoPrincipal.jpg" alt="Logo HardDrive" class="w-75">
-        <p class="text-center w-50 text-decoration-none text-light lead">HardDrive</p>
+      <!-- Modal para editar juego -->
+      <div
+        class="modal fade"
+        id="editGameModal"
+        tabindex="-1"
+        aria-labelledby="editGameModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editGameModalLabel">Editar Juego</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="edit-form">
+                <div class="mb-3">
+                  <label for="edit-name" class="form-label">Nombre</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="edit-name"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="edit-genre" class="form-label">Género</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="edit-genre"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="edit-platform" class="form-label"
+                    >Plataforma</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="edit-platform"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="edit-image" class="form-label"
+                    >URL de la Imagen</label
+                  >
+                  <input
+                    type="url"
+                    class="form-control"
+                    id="edit-image"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Guardar Cambios
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
-        <article class="col-md-3">
-          <h6 class="mb-md-4 mb-2 fw-bolder">Productos</h6>
-          <div class="mb-md-3">
-            <a
-              class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-              href="#"
-              >Juegos</a
-            >
-            <br />
-          </div>
-          <div class="mb-md-3">
-            <a
-              class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-              href="#"
-              >Consolas</a
-            >
-            <br />
-          </div>
-          <div class="mb-md-3">
-            <a
-              class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-              href="#"
-              >Controles</a
-            >
-            <br />
-          </div>
-          <div class="mb-3">
-            <a
-              class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-              href="#"
-              >Accesorios</a
-            >
-            <br />
-          </div>
-        </article>
-        <article class="col-md-3">
-          <h6 class="mb-md-4 mb-2 fw-bolder">Tienda</h6>
-          <p class="mb-md-3 mb-1 text-secondary">
-            C.25 de mayo 50, Tucuman <br />
-            San Miguel de Tucuman, Argentina.
-          </p>
-          <p class="mb-md-3 mb-1 text-secondary">Lune-Vie: 7:00 - 22:00</p>
-          <div class="mb-md-3 mb-1">
-            <a
-              class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-              href="#"
-              >info@correo.ficticio.com</a
-            >
-            <br />
-          </div>
-          <div class="mb-md-3 mb-3">
-            <a
-              class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-              href="#"
-              >+54-1-23-5678910</a
-            >
-          </div>
-        </article>
-        <article class="col-md-3">
-          <h6 class="mb-md-4 fw-bolder">Política</h6>
-          <div class="mb-md-3">
-            <a
-              class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-              href="#"
-              >Términos y condiciones</a
-            >
-            <br />
-          </div>
-          <div class="mb-md-3">
-            <a
-              class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-              href="#"
-              >Política de envío</a
-            >
-            <br />
-          </div>
-          <div class="mb-md-3">
-            <a
-              class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-              href="#"
-              >Política de reembolso</a
-            >
-            <br />
-          </div>
-          <div class="mb-md-3">
-            <a
-              class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-              href="#"
-              >Política de privacidad</a
-            >
-            <br />
-          </div>
-          <div class="mb-md-3">
-            <a
-              class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-              href="#"
-              >Política de cookies</a
-            >
-            <br />
-          </div>
-          <div class="mb-3">
-            <a
-              class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
-              href="#"
-              >FAQ</a
-            >
-          </div>
-        </article>
       </div>
-    </section>
-    <div class="border mx-5 border-0 border-bottom mt-3"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-9">
-          <div class="row justify-content-md-start m-0">
+    </main>
+
+    <footer class="bg-black py-md-5 py-3">
+      <section class="container text-center text-md-start">
+        <div class="row">
+          <div
+            class="col-md-3 d-flex justify-content-center justify-content-md-start align-items-center mb-4 flex-column"
+          >
+            <a
+              href="#"
+              class="text-center text-decoration-none text-light lead"
+            >
+            </a>
+            <img
+              src="../img/logoPrincipal.jpg"
+              alt="Logo HardDrive"
+              class="w-75"
+            />
+            <p class="text-center w-50 text-decoration-none text-light lead">
+              HardDrive
+            </p>
+          </div>
+          <article class="col-md-3">
+            <h6 class="mb-md-4 mb-2 fw-bolder">Productos</h6>
+            <div class="mb-md-3">
+              <a
+                class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
+                href="#"
+                >Juegos</a
+              >
+              <br />
+            </div>
+            <div class="mb-md-3">
+              <a
+                class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
+                href="#"
+                >Consolas</a
+              >
+              <br />
+            </div>
+            <div class="mb-md-3">
+              <a
+                class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
+                href="#"
+                >Controles</a
+              >
+              <br />
+            </div>
+            <div class="mb-3">
+              <a
+                class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
+                href="#"
+                >Accesorios</a
+              >
+              <br />
+            </div>
+          </article>
+          <article class="col-md-3">
+            <h6 class="mb-md-4 mb-2 fw-bolder">Tienda</h6>
+            <p class="mb-md-3 mb-1 text-secondary">
+              Av.Fictia, calle fictia 10 <br />
+              44100 Provincia, ciudad, pais
+            </p>
+            <p class="mb-md-3 mb-1 text-secondary">Lune-Vie: 7:00 - 22:00</p>
+            <div class="mb-md-3 mb-1">
+              <a
+                class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
+                href="#"
+                >info@correo.ficticio.com</a
+              >
+              <br />
+            </div>
+            <div class="mb-md-3 mb-3">
+              <a
+                class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
+                href="#"
+                >+54-1-23-5678910</a
+              >
+            </div>
+          </article>
+          <article class="col-md-3">
+            <h6 class="mb-md-4 fw-bolder">Política</h6>
+            <div class="mb-md-3">
+              <a
+                class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
+                href="#"
+                >Términos y condiciones</a
+              >
+              <br />
+            </div>
+            <div>
+              <a
+                class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
+                href="#"
+                >Política de envío</a
+              >
+              <br />
+            </div>
+            <div class="mb-md-3">
+              <a
+                class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
+                href="#"
+                >Política de reembolso</a
+              >
+              <br />
+            </div>
+            <div class="mb-md-3">
+              <a
+                class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
+                href="#"
+                >Política de privacidad</a
+              >
+              <br />
+            </div>
+            <div class="mb-md-3">
+              <a
+                class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
+                href="#"
+                >Política de cookies</a
+              >
+              <br />
+            </div>
+            <div class="mb-3">
+              <a
+                class="link-secondary link-offset-1-hover link-underline-opacity-0 link-underline-opacity-100-hover"
+                href="#"
+                >FAQ</a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+      <div class="border mx-5 border-0 border-bottom mt-3"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="row justify-content-md-start m-0">
+              <h6 class="my-4 fw-bolder text-center text-md-start">
+                Métodos de pago
+              </h6>
+              <div class="col-3 col-md-1 mb-3 me-md-3">
+                <img src="../img/Visa.jpg" alt="" />
+              </div>
+              <div class="col-3 col-md-1 mb-3 me-md-3">
+                <img src="../img/Master Card.jpg" alt="" />
+              </div>
+              <div class="col-3 col-md-1 mb-3 me-md-3">
+                <img src="../img/American Express.jpg" alt="" />
+              </div>
+              <div class="col-3 col-md-1 mb-3 me-md-3">
+                <img src="../img/JCB.jpg" alt="" />
+              </div>
+              <div class="col-3 col-md-1 me-md-3">
+                <img src="../img/Discover.jpg" alt="" />
+              </div>
+              <div class="col-3 col-md-1 me-md-3">
+                <img src="../img/China Union Pay.jpg" alt="" />
+              </div>
+              <div class="col-3 col-md-1 me-md-3">
+                <img src="../img/Discover.jpg" alt="" />
+              </div>
+              <div class="col-3 col-md-1 me-md-3">
+                <img src="../img/PayPal.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
             <h6 class="my-4 fw-bolder text-center text-md-start">
-              Métodos de pago
+              Únete a la comunidad
             </h6>
-            <div class="col-3 col-md-1 mb-3 me-md-3">
-              <img src="../img/Visa.jpg" alt="" />
+            <div class="text-center text-md-start">
+              <a
+                href="https://www.facebook.com/?locale=es_LA"
+                class="text-decoration-none link-light"
+              >
+                <i
+                  class="bi bi-facebook me-3 me-md-4 fs-3 hoverIconsRedesSociales"
+                ></i>
+              </a>
+              <a
+                href="https://www.instagram.com/accounts/login/"
+                class="text-decoration-none link-light"
+              >
+                <i
+                  class="bi bi-instagram me-3 me-md-4 fs-3 hoverIconsRedesSociales"
+                ></i>
+              </a>
+              <a
+                href="https://www.youtube.com"
+                class="text-decoration-none link-light"
+              >
+                <i
+                  class="bi bi-youtube me-3 me-md-4 fs-3 hoverIconsRedesSociales"
+                ></i>
+              </a>
+              <a
+                href="https://www.tiktok.com/?lang=es"
+                class="text-decoration-none link-light"
+              >
+                <i
+                  class="bi bi-tiktok me-md-4 fs-3 hoverIconsRedesSociales"
+                ></i>
+              </a>
             </div>
-            <div class="col-3 col-md-1 mb-3 me-md-3">
-              <img src="../img/Master Card.jpg" alt="" />
-            </div>
-            <div class="col-3 col-md-1 mb-3 me-md-3">
-              <img src="../img/American Express.jpg" alt="" />
-            </div>
-            <div class="col-3 col-md-1 mb-3 me-md-3">
-              <img src="../img/JCB.jpg" alt="" />
-            </div>
-            <div class="col-3 col-md-1 me-md-3">
-              <img src="../img/Discover.jpg" alt="" />
-            </div>
-            <div class="col-3 col-md-1 me-md-3">
-              <img src="../img/China Union Pay.jpg" alt="" />
-            </div>
-            <div class="col-3 col-md-1 me-md-3">
-              <img src="../img/Discover.jpg" alt="" />
-            </div>
-            <div class="col-3 col-md-1 me-md-3">
-              <img src="../img/PayPal.jpg" alt="" />
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <h6 class="my-4 fw-bolder text-center text-md-start">
-            Únete a la comunidad
-          </h6>
-          <div class="text-center text-md-start">
-            <a
-              href="https://www.facebook.com/?locale=es_LA"
-              class="text-decoration-none link-light"
-            >
-              <i
-                class="bi bi-facebook me-3 me-md-4 fs-3 hoverIconsRedesSociales"
-              ></i>
-            </a>
-            <a
-              href="https://www.instagram.com/accounts/login/"
-              class="text-decoration-none link-light"
-            >
-              <i
-                class="bi bi-instagram me-3 me-md-4 fs-3 hoverIconsRedesSociales"
-              ></i>
-            </a>
-            <a
-              href="https://www.youtube.com"
-              class="text-decoration-none link-light"
-            >
-              <i
-                class="bi bi-youtube me-3 me-md-4 fs-3 hoverIconsRedesSociales"
-              ></i>
-            </a>
-            <a
-              href="https://www.tiktok.com/?lang=es"
-              class="text-decoration-none link-light"
-            >
-              <i
-                class="bi bi-tiktok me-md-4 fs-3 hoverIconsRedesSociales"
-              ></i>
-            </a>
           </div>
         </div>
       </div>
-    </div>
-    </footer>  
-      <script src="../js/app.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-  </body>
+    </footer>
 
-  </html>
+    <script src="../JS/admin.js"></script>
+    <script src="../app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
