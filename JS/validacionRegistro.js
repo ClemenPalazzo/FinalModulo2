@@ -18,13 +18,3 @@ export function validarCaracteres(input, min, max) {
       return false;
     }
   }
-  export function validarPassword(input){
-    const valPass = /^(?=.*\d)(?=.*[a-z])(?=.*[^a-zA-Z0-9])(?!.*\s).{6,15}$/
-    if(input.value.match(valPass)){
-       input.className = 'form-control is-valid'
-       alert("El password es seguro !")
-    }else{
-        alert("Error! El password debe contener al menos una minúscula, mayúscula, número y un carácter especial. Y 8 carácteres como mínimo")
-      input.className = 'form-control is-invalid'
-    }
-  }

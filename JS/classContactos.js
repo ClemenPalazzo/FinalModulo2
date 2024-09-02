@@ -6,9 +6,9 @@ export class Contacto {
   #mail;
   #telefono
   #password;
-  #foto;
+ 
 
-  constructor(nombre, apellido, nombreUsuario, mail, telefono, password, foto) {
+  constructor(nombre, apellido, nombreUsuario, mail, telefono, password) {
     this.#id = crypto.randomUUID();
     this.#nombre = nombre;
     this.#apellido = apellido;
@@ -16,7 +16,6 @@ export class Contacto {
     this.#mail = mail;
     this.#telefono = telefono;
     this.#password = password;
-    this.#foto = foto;
   }
   get id() {
     return this.#id;
@@ -60,12 +59,7 @@ export class Contacto {
   set password(value) {
     this.#password = value;
   }
-  get foto() {
-    return this.#foto;
-  }
-  set foto(value) {
-    this.#foto = value;
-  }
+
   toJSON() {
     return {
       id: this.id,
@@ -75,7 +69,7 @@ export class Contacto {
       mail: this.mail,
       telefono: this.telefono,
       password: this.password,
-      foto: this.foto,
+  
     };
   }
 }

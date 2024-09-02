@@ -25,103 +25,65 @@
   </head>
   <body>
   <header>
-    <!-- Etiqueta abierta código isma modal -->
     <nav class="navbar navbar-expand-lg pt-md-4 px-md-5 bg-black">
-      <div class="container-fluid justify-content-end justify-content-md-center justify-content-between">
-        <a href="#" class="w-25 d-block d-lg-none">
-          <img src="../img/logoPrincipal.jpg" alt="LohoHardDrive" class="w-100" />
-        </a>
-        <a href="../index.html" class="w-25 d-none d-lg-block text-decoration-none">
+      <div class="container-fluid justify-content-between">
+        <a href="../index.html" class="navbar-brand d-none d-lg-block">
           <img src="../img/logoPrincipal.jpg" alt="Logo HardDrive" class="w-50" />
-          <p class="text-center w-50 text-decoration-none text-light lead">
-            HardDrive
-          </p>
         </a>
-        <form class="d-none d-md-block">
-          <div class="input-group">
-            <input type="search" class="form-control" placeholder="Buscar producto" aria-label="Buscar producto" />
-            <button class="btn btn-outline-secondary text-light" type="button">
-              <i class="bi bi-search"></i>
-            </button>
-          </div>
-        </form>
-        <div>
-          <a href="#" class="text-decoration-none text-light d-md-none">
-            <i class="bi bi-cart3 fs-2" data-bs-toggle="modal" data-bs-target="#mi-modal">
-            </i>
-            <!-- <i class="bi bi-cart3 fs-1 align-bottom ms-md-3 d-md-none"></i> -->
-          </a>
-          <a href="#" class="text-decoration-none text-light mx-3 d-md-none">
-            <i class="bi bi-person-circle fs-1 align-bottom"></i>
-          </a>
-          <a href="#" class="text-decoration-none text-light d-md-none">
-            <i class="bi bi-search fs-1 align-bottom me-2"></i>
-          </a>
-          <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
+        <a href="#" class="navbar-brand d-block d-lg-none">
+          <img src="../img/logoPrincipal.jpg" alt="Logo HardDrive" class="w-100" />
+        </a>
+  
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
         <div class="collapse navbar-collapse justify-content-md-end" id="navbarNavDropdown">
           <ul class="navbar-nav align-items-md-center">
             <li class="nav-item">
-              <a class="nav-link active fs-5 me-3" aria-current="page" href="./registro.html">Registro</a>
+              <a class="nav-link active fs-5 me-3" aria-current="page" href="./pages/registro.html">Registro</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-5 me-3" href="./SobreNosotros.html">¿Quienes somos?</a>
+              <a class="nav-link fs-5 me-3" href="./pages/SobreNosotros.html">¿Quiénes somos?</a>
             </li>
             <li class="nav-item dropdown fs-5">
-              <a class="nav-link dropdown-toggle me-3" href="./Productos.html" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
+              <a class="nav-link dropdown-toggle me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Productos
               </a>
               <ul class="dropdown-menu bg-black py-1 border-0 rounded-0">
-                <li>
-                  <a class="dropdown-item px-3" href="./Productos.html">Tienda</a>
-                </li>
-                <li><a class="dropdown-item px-3" href="./Erro404.html">Juegos</a></li>
-                <li>
-                  <a class="dropdown-item px-3" href="./Erro404.html">Consolas</a>
-                </li>
-                <li>
-                  <a class="dropdown-item px-3" href="./Erro404.html">Controles</a>
-                </li>
-                <li>
-                  <a class="dropdown-item px-3" href="./Erro404.html">Perifericos</a>
-                </li>
+                <li><a class="dropdown-item px-3" href="./pages/Productos.html">Tienda</a></li>
+                <li><a class="dropdown-item px-3" href="./pages/Erro404.html">Juegos</a></li>
+                <li><a class="dropdown-item px-3" href="./pages/Erro404.html">Consolas</a></li>
+                <li><a class="dropdown-item px-3" href="./pages/Erro404.html">Controles</a></li>
+                <li><a class="dropdown-item px-3" href="./pages/Erro404.html">Periféricos</a></li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link fs-5 me-3" href="./Erro404.html">Ofertas</a>
+              <a class="nav-link fs-5 me-3" href="./pages/Erro404.html">Ofertas</a>
             </li>
-
             <li class="nav-item dropdown fs-5">
-              <a class="nav-link dropdown-toggle me-3" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
+              <a class="nav-link dropdown-toggle me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Más
               </a>
               <ul class="dropdown-menu bg-black py-1 border-0 rounded-0">
-                <li>
-                  <a class="dropdown-item px-3" href="./contactos.html">Contactanos</a>
-                </li>
+                <li><a class="dropdown-item px-3" href="./pages/contactos.html">Contáctanos</a></li>
               </ul>
             </li>
             <li class="nav-item me-3 d-none d-md-flex">
-              <a class="nav-link fs-5 d-inline-flex flex-row-reverse align-items-center" href="./login.html">Entrar
-                <i class="bi bi-person-circle pe-2 fs-2"></i>
+              <a class="nav-link fs-5 d-inline-flex flex-row-reverse align-items-center" href="./pages/login.html">
+                Entrar<i class="bi bi-person-circle pe-2 fs-2"></i>
               </a>
             </li>
             <li class="nav-item me-3 d-none d-md-flex">
-
               <a class="nav-link" href="#">
-
-                <i class="bi bi-cart3 fs-2" data-bs-toggle="modal" data-bs-target="#mi-modal">
-                </i>
+                <i class="bi bi-cart3 fs-2" data-bs-toggle="modal" data-bs-target="#mi-modal"></i>
               </a>
             </li>
           </ul>
         </div>
+  
+     
+       
       </div>
     </nav>
   </header>
@@ -193,7 +155,7 @@
         </p>
         <article class="container-fluid">
           <div class="row bg-body-secondary justify-content-lg-evenly pt-3">
-            <div class="col-12 col-md-6 col-lg-6 d-none d-md-block align-content-center">
+            <div class="col-12 col-md-6 col-lg-6 d-none d-md-none d-lg-inline align-content-center">
               <figure>
                 <img
                   src="../img/registroImagen.jpg"
@@ -203,7 +165,7 @@
               </figure>
             </div>
             <div
-              class="col-12 col-md-6 col-lg-6 mb-2 align-content-center"
+              class="col-12 col-md-12 col-lg-6 mb-2 align-content-center"
             >
             <h3 class="mb-4">Ingrese sus datos</h3>
               <form id="formRegistro" class="row text-start bg-body-dark border-bottom border-top border-1 pb-2">
@@ -277,7 +239,7 @@
                     id="password"
                     class="form-control border-input bg-body-secondary"
                     placeholder="juan$Perez328"
-                    minlength="6"
+                    minlength="8"
                     maxlength="15"
                     required
                   />
@@ -289,27 +251,16 @@
                     id="rpassword"
                     class="form-control border-input bg-body-secondary"
                     placeholder="juan$Perez328"
-                    minlength="6"
+                    minlength="8"
                     maxlength="15"
                     required
                   />
+
                 </div>
-                <div class="">
-                  <label class="form-label">foto</label>
+                <p class="mt-4 mb-2 text-md-center">Los campos con (*) son obligatorios</p>
+                <div class="form-check ms-2 mb-3 mt-2 text-md-center d-md-flex justify-content-md-center">
                   <input
-                    type="text"
-                    id="foto"
-                    class="form-control border-input bg-body-secondary"
-                    placeholder="link de la foto"
-                    minlength="5"
-                    maxlength="200"
-                    required
-                  />
-                </div>
-                <p class="mt-4 mb-2">Los campos con (*) son obligatorios</p>
-                <div class="form-check ms-2 mb-3 mt-2">
-                  <input
-                    class="form-check-input"
+                    class="form-check-input me-2"
                     type="checkbox"
                     id="terminos y condiciones"
                     required
@@ -322,7 +273,7 @@
                   >
                 </div>
                 <div class="text-center mt-2">
-                  <button type="submit" class="buttoncomprar">Enviar</button>
+                  <button type="submit" class="buttoncomprar w-100">Enviar</button>
                 </div>
               </form>
             </div>
@@ -351,39 +302,6 @@
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </section>
-  
-  
-  <!-- BUTTON CHAT  -->
- <section>
-  <button class="open_button" onclick="openForm()">
-    <i class="bi bi-chat-dots-fill"></i>
-  </button>
-  <div class="chat_popup" id="myForm">
-    <form action="" class="form_container">
-      <div class="w-100">
-        <a id="formChat" href="" class="text-decoration-none">
-          <img src="../img/logoPrincipal.jpg" alt="logo" />HarDrive
-        </a>
-        <button
-          type="button"
-          class="btn-close buttonChatClose"
-          onclick="closeForm()"
-          aria-label="Close"></button>
-      </div>
-      <label id="msg" for="msg" class=""> Dejános tu mensaje...</label>
-      <textarea
-        class="w-100 form-container text-start ps-3"
-        name="msg"
-        minlength="15"
-        maxlength="250"
-        placeholder="Escribe un mensaje aquí..."
-        required></textarea>
-        <a href="./pages/Erro404.html"><button class="buttoncomprar">Enviar Comentario</button></a>
-   
-    </form>
-  </div>
-</section>
-  
     </main>
   </body>
     <footer class="bg-black py-md-5 py-3">
