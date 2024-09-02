@@ -81,4 +81,10 @@
     .precioCarrito{
         font-size: 13px;
     }
+    
+}
+@media only screen and (max-width: 300px){
+    .buttoncomprar{
+     width: 200px;
+    }
 }
