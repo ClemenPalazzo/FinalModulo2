@@ -1,133 +1,97 @@
-// Constructor para los objetos Game
-class Game {
-  constructor(name, genre, platform, image) {
-    this.name = name;
-    this.genre = genre;
-    this.platform = platform;
-    this.image = image;
-  }
+
+function guardarJuegos(juegos) {
+    localStorage.setItem('juegos', JSON.stringify(juegos.map(juego => juego.toJSON())));
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const gameForm = document.querySelector("#game-form");
-  const editForm = document.querySelector("#edit-form");
-  const gameTable = document.querySelector("#game-table tbody");
-
-  let editIndex = null;
-
-  // Load games from localStorage
-  function loadGames() {
-    const games = JSON.parse(localStorage.getItem("games")) || [];
-    gameTable.innerHTML = "";
-
-    games.forEach((game, index) => {
-      const row = document.createElement("tr");
-      row.innerHTML = `
-                <td>${index + 1}</td>
-                <td><img src="${game.image}" alt="${
-        game.name
-      }" class="img-thumbnail" style="width: 60px;"></td>
-                <td>${game.name}</td>
-                <td>${game.genre}</td>
-                <td>${game.platform}</td>
-                <td>
-                    <button class="btn btn-success me-2" data-index="${index}" onclick="viewGame(${index})">Ver</button>
-                    <button class="btn btn-warning me-2" data-index="${index}" onclick="editGame(${index})">Editar</button>
-                    <button class="btn btn-danger" data-index="${index}" onclick="deleteGame(${index})">Borrar</button>
-                </td>
-            `;
-      gameTable.appendChild(row);
-    });
-  }
-
-  // Save game to localStorage
-  function saveGame(game) {
-    const games = JSON.parse(localStorage.getItem("games")) || [];
-    games.push(game);
-    localStorage.setItem("games", JSON.stringify(games));
-    loadGames();
-  }
-
-  // Update game in localStorage
-  function updateGame(index, updatedGame) {
-    const games = JSON.parse(localStorage.getItem("games")) || [];
-    games[index] = updatedGame;
-    localStorage.setItem("games", JSON.stringify(games));
-    loadGames();
-  }
-
-  function deleteGame(index) {
-    const games = JSON.parse(localStorage.getItem("games")) || [];
-    games.splice(index, 1);
-    localStorage.setItem("games", JSON.stringify(games));
-    loadGames();
-  }
-
-  gameForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const name = document.querySelector("#game-name").value;
-    const genre = document.querySelector("#game-genre").value;
-    const platform = document.querySelector("#game-platform").value;
-    const image = document.querySelector("#game-image").value;
-
-    const newGame = new Game(name, genre, platform, image);
-    saveGame(newGame);
-
-    gameForm.reset();
-    const modal = bootstrap.Modal.getInstance(
-      document.querySelector("#addGameModal")
-    );
-    modal.hide();
-  });
-
-  editForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const name = document.querySelector("#edit-name").value;
-    const genre = document.querySelector("#edit-genre").value;
-    const platform = document.querySelector("#edit-platform").value;
-    const image = document.querySelector("#edit-image").value;
-
-    const updatedGame = new Game(name, genre, platform, image);
-    updateGame(editIndex, updatedGame);
-
-    editForm.reset();
-    const modal = bootstrap.Modal.getInstance(
-      document.querySelector("#editGameModal")
-    );
-    modal.hide();
-  });
-
-  loadGames();
-
-  window.editGame = function (index) {
-    editIndex = index;
-    const games = JSON.parse(localStorage.getItem("games")) || [];
-    const game = games[index];
-
-    document.querySelector("#edit-name").value = game.name;
-    document.querySelector("#edit-genre").value = game.genre;
-    document.querySelector("#edit-platform").value = game.platform;
-    document.querySelector("#edit-image").value = game.image;
-
-    const editModal = new bootstrap.Modal(
-      document.querySelector("#editGameModal")
-    );
-    editModal.show();
-  };
-
-  window.deleteGame = function (index) {
-    if (confirm("¿Está seguro de que desea eliminar este juego?")) {
-      deleteGame(index);
+// Cargar juegos desde localStorage
+function cargarJuegos() {
+    const juegosJSON = localStorage.getItem('juegos');
+    if (juegosJSON) {
+        const juegosArray = JSON.parse(juegosJSON);
+        return juegosArray.map(j => {
+            const juego = new Juego(j.nombreJuego, j.descripcionJuego, j.precioJuego, j.duracionJuego, j.tipoJuego, j.imagenJuego, j.reseñaJuego);
+            juego.id = j.id; // Establecer el ID ya que es generado al crear el juego
+            return juego;
+        });
     }
-  };
+    return [];}
 
-  window.viewGame = function (index) {
-    const games = JSON.parse(localStorage.getItem("games")) || [];
-    const game = games[index];
-    alert(
-      `Nombre: ${game.name}\nGénero: ${game.genre}\nPlataforma: ${game.platform}\nImagen: ${game.image}`
-    );
-  };
+    let juegos = cargarJuegos();
+
+// Renderizar la tabla
+function renderizarTabla() {
+    const tbody = document.querySelector('#tablaServicios');
+    tbody.innerHTML = ''; // Limpiar la tabla antes de renderizar
+
+    juegos.forEach(juego => {
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+            <td>${juego.nombreJuego}</td>
+            <td>${juego.descripcionJuego}</td>
+            <td>${juego.precioJuego}</td>
+            <td>${juego.duracionJuego}</td>
+            <td>${juego.tipoJuego}</td>
+            <td><img src="${juego.imagenJuego}" alt="${juego.nombreJuego}" width="100"></td>
+            <td>${juego.reseñaJuego}</td>
+            <td>
+                <button class="btn btn-warning btn-sm" onclick="editarJuego('${juego.id}')">Editar</button>
+                <button class="btn btn-danger btn-sm" onclick="eliminarJuego('${juego.id}')">Eliminar</button>
+            </td>
+        `;
+        tbody.appendChild(fila);
+    });
+}
+
+// Agregar un nuevo juego
+document.getElementById('btnNuevo').addEventListener('click', () => {
+    const nombreJuego = prompt("Nombre del juego:");
+    const descripcionJuego = prompt("Descripción del juego:");
+    const precioJuego = prompt("Precio del juego:");
+    const duracionJuego = prompt("Duración del juego:");
+    const tipoJuego = prompt("Tipo del juego:");
+    const imagenJuego = prompt("URL de la imagen del juego:");
+    const reseñaJuego = prompt("Reseña del juego:");
+
+    if (nombreJuego && descripcionJuego && precioJuego && duracionJuego && tipoJuego && imagenJuego && reseñaJuego) {
+        const nuevoJuego = new Juego(nombreJuego, descripcionJuego, precioJuego, duracionJuego, tipoJuego, imagenJuego, reseñaJuego);
+        juegos.push(nuevoJuego);
+        guardarJuegos(juegos);
+        renderizarTabla();
+    }
 });
+
+// Editar un juego
+function editarJuego(id) {
+    const juego = juegos.find(j => j.id === id);
+    if (juego) {
+        const nuevoNombre = prompt("Nuevo nombre del juego:", juego.nombreJuego);
+        const nuevaDescripcion = prompt("Nueva descripción del juego:", juego.descripcionJuego);
+        const nuevoPrecio = prompt("Nuevo precio del juego:", juego.precioJuego);
+        const nuevaDuracion = prompt("Nueva duración del juego:", juego.duracionJuego);
+        const nuevoTipo = prompt("Nuevo tipo del juego:", juego.tipoJuego);
+        const nuevaImagen = prompt("Nueva URL de la imagen del juego:", juego.imagenJuego);
+        const nuevaReseña = prompt("Nueva reseña del juego:", juego.reseñaJuego);
+
+        if (nuevoNombre && nuevaDescripcion && nuevoPrecio && nuevaDuracion && nuevoTipo && nuevaImagen && nuevaReseña) {
+            juego.nombreJuego = nuevoNombre;
+            juego.descripcionJuego = nuevaDescripcion;
+            juego.precioJuego = nuevoPrecio;
+            juego.duracionJuego = nuevaDuracion;
+            juego.tipoJuego = nuevoTipo;
+            juego.imagenJuego = nuevaImagen;
+            juego.reseñaJuego = nuevaReseña;
+            guardarJuegos(juegos);
+            renderizarTabla();
+        }
+    }
+}
+
+// Eliminar un juego
+function eliminarJuego(id) {
+    juegos = juegos.filter(j => j.id !== id);
+    guardarJuegos(juegos);
+    renderizarTabla();
+}
+
+// Inicializar la tabla al cargar la página
+document.addEventListener('DOMContentLoaded', renderizarTabla);
