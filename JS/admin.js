@@ -1,10 +1,12 @@
 class Juego {
-    constructor(id, nombreJuego, descripcionJuego, precioJuego, duracionJuego, tipoJuego, imagenJuego, reseñaJuego) {
+    constructor(id, nombreJuego, descripcionJuego, precioJuego, categoriaJuego, desarrolladorJuego, requisitosJuego, tipoJuego, imagenJuego, reseñaJuego) {
         this.id = id || this.generarId();
         this.nombreJuego = nombreJuego;
         this.descripcionJuego = descripcionJuego;
         this.precioJuego = precioJuego;
-        this.duracionJuego = duracionJuego;
+        this.categoriaJuego = categoriaJuego;
+        this.desarrolladorJuego = desarrolladorJuego;
+        this.requisitosJuego = requisitosJuego;
         this.tipoJuego = tipoJuego;
         this.imagenJuego = imagenJuego;
         this.reseñaJuego = reseñaJuego;
@@ -20,7 +22,9 @@ class Juego {
             nombreJuego: this.nombreJuego,
             descripcionJuego: this.descripcionJuego,
             precioJuego: this.precioJuego,
-            duracionJuego: this.duracionJuego,
+            categoriaJuego: this.categoriaJuego,
+            desarrolladorJuego: this.desarrolladorJuego,
+            requisitosJuego: this.requisitosJuego,
             tipoJuego: this.tipoJuego,
             imagenJuego: this.imagenJuego,
             reseñaJuego: this.reseñaJuego
@@ -36,7 +40,18 @@ function cargarJuegos() {
     const juegosJSON = localStorage.getItem('juegos');
     if (juegosJSON) {
         const juegosArray = JSON.parse(juegosJSON);
-        return juegosArray.map(j => new Juego(j.id, j.nombreJuego, j.descripcionJuego, j.precioJuego, j.duracionJuego, j.tipoJuego, j.imagenJuego, j.reseñaJuego));
+        return juegosArray.map(j => new Juego(
+            j.id,
+            j.nombreJuego,
+            j.descripcionJuego,
+            j.precioJuego,
+            j.categoriaJuego,
+            j.desarrolladorJuego,
+            j.requisitosJuego,
+            j.tipoJuego,
+            j.imagenJuego,
+            j.reseñaJuego
+        ));
     }
     return [];
 }
@@ -53,7 +68,9 @@ function renderizarTabla() {
             <td>${juego.nombreJuego}</td>
             <td>${juego.descripcionJuego}</td>
             <td>${juego.precioJuego}</td>
-            <td>${juego.duracionJuego}</td>
+            <td>${juego.categoriaJuego}</td>
+            <td>${juego.desarrolladorJuego}</td>
+            <td>${juego.requisitosJuego}</td>
             <td>${juego.tipoJuego}</td>
             <td><img src="${juego.imagenJuego}" alt="${juego.nombreJuego}" width="100"></td>
             <td>${juego.reseñaJuego}</td>
@@ -66,7 +83,7 @@ function renderizarTabla() {
         tbody.appendChild(fila);
     });
 
-    // Asignar eventos a los botones después de que se hayan creado
+    
     document.querySelectorAll('.ver-detalle').forEach(btn => {
         btn.addEventListener('click', (event) => {
             const id = event.target.getAttribute('data-id');
@@ -104,7 +121,9 @@ function abrirModal(juego = null) {
     const nombreJuego = document.getElementById('nombreJuego');
     const descripcionJuego = document.getElementById('descripcionJuego');
     const precioJuego = document.getElementById('precioJuego');
-    const duracionJuego = document.getElementById('duracionJuego');
+    const categoriaJuego = document.getElementById('categoriaJuego');
+    const desarrolladorJuego = document.getElementById('desarrolladorJuego');
+    const requisitosJuego = document.getElementById('requisitosJuego');
     const tipoJuego = document.getElementById('tipoJuego');
     const imagenJuego = document.getElementById('imagenJuego');
     const reseñaJuego = document.getElementById('reseñaJuego');
@@ -115,7 +134,9 @@ function abrirModal(juego = null) {
         nombreJuego.value = juego.nombreJuego;
         descripcionJuego.value = juego.descripcionJuego;
         precioJuego.value = juego.precioJuego;
-        duracionJuego.value = juego.duracionJuego;
+        categoriaJuego.value = juego.categoriaJuego;
+        desarrolladorJuego.value = juego.desarrolladorJuego;
+        requisitosJuego.value = juego.requisitosJuego;
         tipoJuego.value = juego.tipoJuego;
         imagenJuego.value = juego.imagenJuego;
         reseñaJuego.value = juego.reseñaJuego;
@@ -136,7 +157,9 @@ function abrirModal(juego = null) {
             nombreJuego.value,
             descripcionJuego.value,
             precioJuego.value,
-            duracionJuego.value,
+            categoriaJuego.value,
+            desarrolladorJuego.value,
+            requisitosJuego.value,
             tipoJuego.value,
             imagenJuego.value,
             reseñaJuego.value
