@@ -1,3 +1,4 @@
+
 class Juego {
     constructor(id, nombreJuego, descripcionJuego, precioJuego, categoriaJuego, desarrolladorJuego, requisitosJuego, tipoJuego, imagenJuego, reseñaJuego) {
         this.id = id || this.generarId();
@@ -31,6 +32,7 @@ class Juego {
         };
     }
 }
+
 
 function guardarJuegos(juegos) {
     localStorage.setItem('juegos', JSON.stringify(juegos.map(juego => juego.toJSON())));
@@ -83,7 +85,7 @@ function renderizarTabla() {
         tbody.appendChild(fila);
     });
 
-    
+
     document.querySelectorAll('.ver-detalle').forEach(btn => {
         btn.addEventListener('click', (event) => {
             const id = event.target.getAttribute('data-id');
@@ -106,13 +108,6 @@ function renderizarTabla() {
     });
 }
 
-document.getElementById('btnNuevo').addEventListener('click', () => {
-    abrirModal();
-});
-
-window.verDetalleJuego = (id) => {
-    window.location.href = `/pages/detalleProducto.html?id=${id}`;
-};
 
 function abrirModal(juego = null) {
     const modalLabel = document.getElementById('juegoModalLabel');
@@ -178,6 +173,7 @@ function abrirModal(juego = null) {
     };
 }
 
+
 function editarJuego(id) {
     const juego = juegos.find(j => j.id === id);
     abrirModal(juego);
@@ -188,5 +184,26 @@ function eliminarJuego(id) {
     guardarJuegos(juegos);
     renderizarTabla();
 }
+
+// Función para manejar la visualización de los detalles de un juego
+function verDetalleJuego(id) {
+    // Redirige a una página de detalles
+    window.location.href = `detalleProducto.html?id=${id}`;
+
+    // O, alternativamente, muestra los detalles en un modal o alerta:
+    /*
+    const juego = juegos.find(j => j.id === id);
+    if (juego) {
+        alert(`Detalles del juego:\n\nNombre: ${juego.nombreJuego}\nDescripción: ${juego.descripcionJuego}\nPrecio: ${juego.precioJuego}\n...`);
+    } else {
+        console.log('Juego no encontrado');
+    }
+    */
+}
+
+
+document.getElementById('btnNuevo').addEventListener('click', () => {
+    abrirModal();
+});
 
 document.addEventListener('DOMContentLoaded', renderizarTabla);
