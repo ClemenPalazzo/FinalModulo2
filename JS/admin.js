@@ -1,27 +1,66 @@
+class Juego {
+    constructor(id, nombreJuego, descripcionJuego, precioJuego, categoriaJuego, desarrolladorJuego, requisitosJuego, tipoJuego, imagenJuego, reseñaJuego) {
+        this.id = id || this.generarId();
+        this.nombreJuego = nombreJuego;
+        this.descripcionJuego = descripcionJuego;
+        this.precioJuego = precioJuego;
+        this.categoriaJuego = categoriaJuego;
+        this.desarrolladorJuego = desarrolladorJuego;
+        this.requisitosJuego = requisitosJuego;
+        this.tipoJuego = tipoJuego;
+        this.imagenJuego = imagenJuego;
+        this.reseñaJuego = reseñaJuego;
+    }
+
+    generarId() {
+        return '_' + Math.random().toString(36).substr(2, 9);
+    }
+
+    toJSON() {
+        return {
+            id: this.id,
+            nombreJuego: this.nombreJuego,
+            descripcionJuego: this.descripcionJuego,
+            precioJuego: this.precioJuego,
+            categoriaJuego: this.categoriaJuego,
+            desarrolladorJuego: this.desarrolladorJuego,
+            requisitosJuego: this.requisitosJuego,
+            tipoJuego: this.tipoJuego,
+            imagenJuego: this.imagenJuego,
+            reseñaJuego: this.reseñaJuego
+        };
+    }
+}
 
 function guardarJuegos(juegos) {
     localStorage.setItem('juegos', JSON.stringify(juegos.map(juego => juego.toJSON())));
 }
 
-// Cargar juegos desde localStorage
 function cargarJuegos() {
     const juegosJSON = localStorage.getItem('juegos');
     if (juegosJSON) {
         const juegosArray = JSON.parse(juegosJSON);
-        return juegosArray.map(j => {
-            const juego = new Juego(j.nombreJuego, j.descripcionJuego, j.precioJuego, j.duracionJuego, j.tipoJuego, j.imagenJuego, j.reseñaJuego);
-            juego.id = j.id; // Establecer el ID ya que es generado al crear el juego
-            return juego;
-        });
+        return juegosArray.map(j => new Juego(
+            j.id,
+            j.nombreJuego,
+            j.descripcionJuego,
+            j.precioJuego,
+            j.categoriaJuego,
+            j.desarrolladorJuego,
+            j.requisitosJuego,
+            j.tipoJuego,
+            j.imagenJuego,
+            j.reseñaJuego
+        ));
     }
-    return [];}
+    return [];
+}
 
-    let juegos = cargarJuegos();
+let juegos = cargarJuegos();
 
-// Renderizar la tabla
 function renderizarTabla() {
     const tbody = document.querySelector('#tablaServicios');
-    tbody.innerHTML = ''; // Limpiar la tabla antes de renderizar
+    tbody.innerHTML = '';
 
     juegos.forEach(juego => {
         const fila = document.createElement('tr');
@@ -29,69 +68,125 @@ function renderizarTabla() {
             <td>${juego.nombreJuego}</td>
             <td>${juego.descripcionJuego}</td>
             <td>${juego.precioJuego}</td>
-            <td>${juego.duracionJuego}</td>
+            <td>${juego.categoriaJuego}</td>
+            <td>${juego.desarrolladorJuego}</td>
+            <td>${juego.requisitosJuego}</td>
             <td>${juego.tipoJuego}</td>
             <td><img src="${juego.imagenJuego}" alt="${juego.nombreJuego}" width="100"></td>
             <td>${juego.reseñaJuego}</td>
             <td>
-                <button class="btn btn-warning btn-sm" onclick="editarJuego('${juego.id}')">Editar</button>
-                <button class="btn btn-danger btn-sm" onclick="eliminarJuego('${juego.id}')">Eliminar</button>
+                <button class="btn btn-primary btn-sm ver-detalle" data-id="${juego.id}">Ver</button>
+                <button class="btn btn-warning btn-sm editar-juego" data-id="${juego.id}">Editar</button>
+                <button class="btn btn-danger btn-sm eliminar-juego" data-id="${juego.id}">Eliminar</button>
             </td>
         `;
         tbody.appendChild(fila);
     });
+
+    
+    document.querySelectorAll('.ver-detalle').forEach(btn => {
+        btn.addEventListener('click', (event) => {
+            const id = event.target.getAttribute('data-id');
+            verDetalleJuego(id);
+        });
+    });
+
+    document.querySelectorAll('.editar-juego').forEach(btn => {
+        btn.addEventListener('click', (event) => {
+            const id = event.target.getAttribute('data-id');
+            editarJuego(id);
+        });
+    });
+
+    document.querySelectorAll('.eliminar-juego').forEach(btn => {
+        btn.addEventListener('click', (event) => {
+            const id = event.target.getAttribute('data-id');
+            eliminarJuego(id);
+        });
+    });
 }
 
-// Agregar un nuevo juego
 document.getElementById('btnNuevo').addEventListener('click', () => {
-    const nombreJuego = prompt("Nombre del juego:");
-    const descripcionJuego = prompt("Descripción del juego:");
-    const precioJuego = prompt("Precio del juego:");
-    const duracionJuego = prompt("Duración del juego:");
-    const tipoJuego = prompt("Tipo del juego:");
-    const imagenJuego = prompt("URL de la imagen del juego:");
-    const reseñaJuego = prompt("Reseña del juego:");
-
-    if (nombreJuego && descripcionJuego && precioJuego && duracionJuego && tipoJuego && imagenJuego && reseñaJuego) {
-        const nuevoJuego = new Juego(nombreJuego, descripcionJuego, precioJuego, duracionJuego, tipoJuego, imagenJuego, reseñaJuego);
-        juegos.push(nuevoJuego);
-        guardarJuegos(juegos);
-        renderizarTabla();
-    }
+    abrirModal();
 });
 
-// Editar un juego
-function editarJuego(id) {
-    const juego = juegos.find(j => j.id === id);
-    if (juego) {
-        const nuevoNombre = prompt("Nuevo nombre del juego:", juego.nombreJuego);
-        const nuevaDescripcion = prompt("Nueva descripción del juego:", juego.descripcionJuego);
-        const nuevoPrecio = prompt("Nuevo precio del juego:", juego.precioJuego);
-        const nuevaDuracion = prompt("Nueva duración del juego:", juego.duracionJuego);
-        const nuevoTipo = prompt("Nuevo tipo del juego:", juego.tipoJuego);
-        const nuevaImagen = prompt("Nueva URL de la imagen del juego:", juego.imagenJuego);
-        const nuevaReseña = prompt("Nueva reseña del juego:", juego.reseñaJuego);
+window.verDetalleJuego = (id) => {
+    window.location.href = `/pages/detalleProducto.html?id=${id}`;
+};
 
-        if (nuevoNombre && nuevaDescripcion && nuevoPrecio && nuevaDuracion && nuevoTipo && nuevaImagen && nuevaReseña) {
-            juego.nombreJuego = nuevoNombre;
-            juego.descripcionJuego = nuevaDescripcion;
-            juego.precioJuego = nuevoPrecio;
-            juego.duracionJuego = nuevaDuracion;
-            juego.tipoJuego = nuevoTipo;
-            juego.imagenJuego = nuevaImagen;
-            juego.reseñaJuego = nuevaReseña;
-            guardarJuegos(juegos);
-            renderizarTabla();
-        }
+function abrirModal(juego = null) {
+    const modalLabel = document.getElementById('juegoModalLabel');
+    const juegoForm = document.getElementById('juegoForm');
+    const juegoId = document.getElementById('juegoId');
+    const nombreJuego = document.getElementById('nombreJuego');
+    const descripcionJuego = document.getElementById('descripcionJuego');
+    const precioJuego = document.getElementById('precioJuego');
+    const categoriaJuego = document.getElementById('categoriaJuego');
+    const desarrolladorJuego = document.getElementById('desarrolladorJuego');
+    const requisitosJuego = document.getElementById('requisitosJuego');
+    const tipoJuego = document.getElementById('tipoJuego');
+    const imagenJuego = document.getElementById('imagenJuego');
+    const reseñaJuego = document.getElementById('reseñaJuego');
+
+    if (juego) {
+        modalLabel.textContent = 'Editar Juego';
+        juegoId.value = juego.id;
+        nombreJuego.value = juego.nombreJuego;
+        descripcionJuego.value = juego.descripcionJuego;
+        precioJuego.value = juego.precioJuego;
+        categoriaJuego.value = juego.categoriaJuego;
+        desarrolladorJuego.value = juego.desarrolladorJuego;
+        requisitosJuego.value = juego.requisitosJuego;
+        tipoJuego.value = juego.tipoJuego;
+        imagenJuego.value = juego.imagenJuego;
+        reseñaJuego.value = juego.reseñaJuego;
+    } else {
+        modalLabel.textContent = 'Agregar Juego';
+        juegoForm.reset();
+        juegoId.value = '';
     }
+
+    const modal = new bootstrap.Modal(document.getElementById('juegoModal'));
+    modal.show();
+
+    juegoForm.onsubmit = function (event) {
+        event.preventDefault();
+
+        const nuevoJuego = new Juego(
+            juegoId.value || null,
+            nombreJuego.value,
+            descripcionJuego.value,
+            precioJuego.value,
+            categoriaJuego.value,
+            desarrolladorJuego.value,
+            requisitosJuego.value,
+            tipoJuego.value,
+            imagenJuego.value,
+            reseñaJuego.value
+        );
+
+        if (juegoId.value) {
+            const index = juegos.findIndex(j => j.id === juegoId.value);
+            juegos[index] = nuevoJuego;
+        } else {
+            juegos.push(nuevoJuego);
+        }
+
+        guardarJuegos(juegos);
+        renderizarTabla();
+        modal.hide();
+    };
 }
 
-// Eliminar un juego
+function editarJuego(id) {
+    const juego = juegos.find(j => j.id === id);
+    abrirModal(juego);
+}
+
 function eliminarJuego(id) {
     juegos = juegos.filter(j => j.id !== id);
     guardarJuegos(juegos);
     renderizarTabla();
 }
 
-// Inicializar la tabla al cargar la página
 document.addEventListener('DOMContentLoaded', renderizarTabla);
