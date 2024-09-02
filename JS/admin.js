@@ -1,158 +1,97 @@
-// classJuego.js
-export default class Juego {
-  constructor(id, name, genre, platform, image) {
-    this.id = id;
-    this.name = name;
-    this.genre = genre;
-    this.platform = platform;
-    this.image = image;
-  }
+
+function guardarJuegos(juegos) {
+    localStorage.setItem('juegos', JSON.stringify(juegos.map(juego => juego.toJSON())));
 }
 
-const modalJuego = new bootstrap.Modal(document.getElementById('modalAdminJuegos'));
-const btnNuevo = document.getElementById('btnNuevo');
-const formJuegos = document.getElementById('formJuegos');
-const nombreJuego = document.getElementById('nombreJuego');
-const generoJuego = document.getElementById('generoJuego');
-const plataformaJuego = document.getElementById('plataformaJuego');
-const imagenJuego = document.getElementById('imagenJuego');
-const tabla = document.querySelector('tbody');
-
-const listaJuegos = JSON.parse(localStorage.getItem('listaJuegosKey')) || [];
-let estoyCreando = true;
-let juegoAEditar;
-
-const mostrarModal = () => {
-  modalJuego.show();
-}
-
-const crearJuego = () => {
-  estoyCreando = true;
-  const id = Date.now().toString(); // Generar un ID único basado en la fecha
-  if (validarCantidadCaracteres(nombreJuego, 3, 30) && validarUrl(imagenJuego)) {
-    const nuevoJuego = new Juego(id, nombreJuego.value, generoJuego.value, plataformaJuego.value, imagenJuego.value);
-    listaJuegos.push(nuevoJuego);
-    guardarEnLocalStorage();
-    dibujarFila(nuevoJuego); // Asegúrate de llamar a dibujarFila después de guardar
-    limpiarFormJuegos();
-  } else {
-    console.log('Hay errores en la carga');
-  }
-}
-
-const limpiarFormJuegos = () => {
-  formJuegos.reset();
-  formJuegos.querySelectorAll('.form-control').forEach(control => {
-    control.classList.remove('is-valid', 'is-invalid');
-  });
-}
-
-const guardarEnLocalStorage = () => {
-  localStorage.setItem('listaJuegosKey', JSON.stringify(listaJuegos));
-}
-
-const cargaJuegosInicial = () => {
-  if (listaJuegos.length > 0) {
-    listaJuegos.forEach(juego => dibujarFila(juego));
-  }
-}
-
-const dibujarFila = (juego) => {
-  const fila = document.createElement('tr');
-  fila.innerHTML = `
-    <td>${juego.name}</td>
-    <td><img src="${juego.image}" class="img-thumbnail" style="width: 60px;"></td>
-    <td>${juego.genre}</td>
-    <td>${juego.platform}</td>
-    <td>
-      <button class="btn btn-success" onclick="verJuego('${juego.id}')">Ver</button>
-      <button class="btn btn-warning" onclick="prepararJuego('${juego.id}')">Editar</button>
-      <button class="btn btn-danger" onclick="borrarJuego('${juego.id}')">Borrar</button>
-    </td>
-  `;
-  tabla.appendChild(fila);
-}
-
-window.borrarJuego = (id) => {
-  Swal.fire({
-    title: "¿Estás seguro de borrar el juego?",
-    text: "No puedes recuperar el juego después de borrarlo",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#a600f9",
-    cancelButtonColor: "#d33",
-    confirmButtonText: "Borrar",
-    cancelButtonText: "Cancelar"
-  }).then((result) => {
-    if (result.isConfirmed) {
-      const index = listaJuegos.findIndex(juego => juego.id === id);
-      if (index !== -1) {
-        listaJuegos.splice(index, 1);
-        guardarEnLocalStorage();
-        tabla.deleteRow(index); // Asegúrate de que este índice es correcto
-        Swal.fire("Borrado", "El juego fue eliminado", "success");
-      }
+// Cargar juegos desde localStorage
+function cargarJuegos() {
+    const juegosJSON = localStorage.getItem('juegos');
+    if (juegosJSON) {
+        const juegosArray = JSON.parse(juegosJSON);
+        return juegosArray.map(j => {
+            const juego = new Juego(j.nombreJuego, j.descripcionJuego, j.precioJuego, j.duracionJuego, j.tipoJuego, j.imagenJuego, j.reseñaJuego);
+            juego.id = j.id; // Establecer el ID ya que es generado al crear el juego
+            return juego;
+        });
     }
-  });
+    return [];}
+
+    let juegos = cargarJuegos();
+
+// Renderizar la tabla
+function renderizarTabla() {
+    const tbody = document.querySelector('#tablaServicios');
+    tbody.innerHTML = ''; // Limpiar la tabla antes de renderizar
+
+    juegos.forEach(juego => {
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+            <td>${juego.nombreJuego}</td>
+            <td>${juego.descripcionJuego}</td>
+            <td>${juego.precioJuego}</td>
+            <td>${juego.duracionJuego}</td>
+            <td>${juego.tipoJuego}</td>
+            <td><img src="${juego.imagenJuego}" alt="${juego.nombreJuego}" width="100"></td>
+            <td>${juego.reseñaJuego}</td>
+            <td>
+                <button class="btn btn-warning btn-sm" onclick="editarJuego('${juego.id}')">Editar</button>
+                <button class="btn btn-danger btn-sm" onclick="eliminarJuego('${juego.id}')">Eliminar</button>
+            </td>
+        `;
+        tbody.appendChild(fila);
+    });
 }
 
-window.prepararJuego = (id) => {
-  estoyCreando = false;
-  mostrarModal();
-  juegoAEditar = listaJuegos.find(juego => juego.id === id);
-  if (juegoAEditar) {
-    nombreJuego.value = juegoAEditar.name;
-    generoJuego.value = juegoAEditar.genre;
-    plataformaJuego.value = juegoAEditar.platform;
-    imagenJuego.value = juegoAEditar.image;
-  }
+// Agregar un nuevo juego
+document.getElementById('btnNuevo').addEventListener('click', () => {
+    const nombreJuego = prompt("Nombre del juego:");
+    const descripcionJuego = prompt("Descripción del juego:");
+    const precioJuego = prompt("Precio del juego:");
+    const duracionJuego = prompt("Duración del juego:");
+    const tipoJuego = prompt("Tipo del juego:");
+    const imagenJuego = prompt("URL de la imagen del juego:");
+    const reseñaJuego = prompt("Reseña del juego:");
+
+    if (nombreJuego && descripcionJuego && precioJuego && duracionJuego && tipoJuego && imagenJuego && reseñaJuego) {
+        const nuevoJuego = new Juego(nombreJuego, descripcionJuego, precioJuego, duracionJuego, tipoJuego, imagenJuego, reseñaJuego);
+        juegos.push(nuevoJuego);
+        guardarJuegos(juegos);
+        renderizarTabla();
+    }
+});
+
+// Editar un juego
+function editarJuego(id) {
+    const juego = juegos.find(j => j.id === id);
+    if (juego) {
+        const nuevoNombre = prompt("Nuevo nombre del juego:", juego.nombreJuego);
+        const nuevaDescripcion = prompt("Nueva descripción del juego:", juego.descripcionJuego);
+        const nuevoPrecio = prompt("Nuevo precio del juego:", juego.precioJuego);
+        const nuevaDuracion = prompt("Nueva duración del juego:", juego.duracionJuego);
+        const nuevoTipo = prompt("Nuevo tipo del juego:", juego.tipoJuego);
+        const nuevaImagen = prompt("Nueva URL de la imagen del juego:", juego.imagenJuego);
+        const nuevaReseña = prompt("Nueva reseña del juego:", juego.reseñaJuego);
+
+        if (nuevoNombre && nuevaDescripcion && nuevoPrecio && nuevaDuracion && nuevoTipo && nuevaImagen && nuevaReseña) {
+            juego.nombreJuego = nuevoNombre;
+            juego.descripcionJuego = nuevaDescripcion;
+            juego.precioJuego = nuevoPrecio;
+            juego.duracionJuego = nuevaDuracion;
+            juego.tipoJuego = nuevoTipo;
+            juego.imagenJuego = nuevaImagen;
+            juego.reseñaJuego = nuevaReseña;
+            guardarJuegos(juegos);
+            renderizarTabla();
+        }
+    }
 }
 
-window.verJuego = (id) => {
-  window.location.href = `/pages/detalleJuego.html?id=${id}`;
+// Eliminar un juego
+function eliminarJuego(id) {
+    juegos = juegos.filter(j => j.id !== id);
+    guardarJuegos(juegos);
+    renderizarTabla();
 }
 
-const administrarJuego = (e) => {
-  e.preventDefault();
-  if (estoyCreando) {
-    crearJuego();
-  } else {
-    modificarJuego();
-  }
-}
-
-const modificarJuego = () => {
-  const index = listaJuegos.findIndex(juego => juego.id === juegoAEditar.id);
-  if (validarCantidadCaracteres(nombreJuego, 3, 30) && validarUrl(imagenJuego)) {
-    listaJuegos[index].name = nombreJuego.value;
-    listaJuegos[index].genre = generoJuego.value;
-    listaJuegos[index].platform = plataformaJuego.value;
-    listaJuegos[index].image = imagenJuego.value;
-    guardarEnLocalStorage();
-    actualizarFilaEnTabla(index);
-    limpiarFormJuegos();
-    estoyCreando = true;
-    modalJuego.hide();
-  } else {
-    console.log('Hay errores en la carga');
-  }
-}
-
-const actualizarFilaEnTabla = (index) => {
-  const fila = tabla.children[index];
-  fila.innerHTML = `
-    <td>${listaJuegos[index].name}</td>
-    <td><img src="${listaJuegos[index].image}" class="img-thumbnail" style="width: 60px;"></td>
-    <td>${listaJuegos[index].genre}</td>
-    <td>${listaJuegos[index].platform}</td>
-    <td>
-      <button class="btn btn-success" onclick="verJuego('${listaJuegos[index].id}')">Ver</button>
-      <button class="btn btn-warning" onclick="prepararJuego('${listaJuegos[index].id}')">Editar</button>
-      <button class="btn btn-danger" onclick="borrarJuego('${listaJuegos[index].id}')">Borrar</button>
-    </td>
-  `;
-}
-
-btnNuevo.addEventListener('click', mostrarModal);
-formJuegos.addEventListener('submit', administrarJuego);
-cargaJuegosInicial();
+// Inicializar la tabla al cargar la página
+document.addEventListener('DOMContentLoaded', renderizarTabla);
