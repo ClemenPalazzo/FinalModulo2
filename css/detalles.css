@@ -35,3 +35,48 @@ h1, h3 {
     height: auto; /* Mantiene la proporción de aspecto */
 }
 
+.requerimientosContainer {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #341161;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.requerimientosContainer h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.requerimientos {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.requerimiento {
+    background: #6e24cf;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.requerimiento h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #c2c2c2;
+}
+
+.requerimiento ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.requerimiento li {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #e2e2e2;
+}
