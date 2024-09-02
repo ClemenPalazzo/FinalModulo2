@@ -9,6 +9,7 @@ const emailL = document.getElementById('emailL');
 const passwordL = document.getElementById('passwordL');
 let n = false;
 const listaUsuario = JSON.parse(localStorage.getItem('listaUsuariokey')) || [];
+const usuarioInvitado = JSON.parse(localStorage.getItem('usuariosRegistradoskey')) || [];
 
 //funciones login
 const analizarCuenta = (e) =>{
@@ -20,6 +21,8 @@ const analizarCuenta = (e) =>{
         const mailRegistrado = listaUsuario.find(listaUsuario => listaUsuario.mail === emailL.value)
         const passRegistrado = listaUsuario.find(listaUsuario => listaUsuario.password === passwordL.value)
         if(mailRegistrado && passRegistrado){
+         const usuarioInvitado = Object.assign({}, mailRegistrado);
+            localStorage.setItem('usuariosRegistradoskey',JSON.stringify(usuarioInvitado));
             window.location.href = '../index.html'
         }else if (n == false){
             const error = document.createElement('h6');
