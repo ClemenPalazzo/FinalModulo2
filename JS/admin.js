@@ -1,133 +1,169 @@
-// Constructor para los objetos Game
-class Game {
-  constructor(name, genre, platform, image) {
-    this.name = name;
-    this.genre = genre;
-    this.platform = platform;
-    this.image = image;
-  }
+class Juego {
+    constructor(id, nombreJuego, descripcionJuego, precioJuego, duracionJuego, tipoJuego, imagenJuego, reseñaJuego) {
+        this.id = id || this.generarId();
+        this.nombreJuego = nombreJuego;
+        this.descripcionJuego = descripcionJuego;
+        this.precioJuego = precioJuego;
+        this.duracionJuego = duracionJuego;
+        this.tipoJuego = tipoJuego;
+        this.imagenJuego = imagenJuego;
+        this.reseñaJuego = reseñaJuego;
+    }
+
+    generarId() {
+        return '_' + Math.random().toString(36).substr(2, 9);
+    }
+
+    toJSON() {
+        return {
+            id: this.id,
+            nombreJuego: this.nombreJuego,
+            descripcionJuego: this.descripcionJuego,
+            precioJuego: this.precioJuego,
+            duracionJuego: this.duracionJuego,
+            tipoJuego: this.tipoJuego,
+            imagenJuego: this.imagenJuego,
+            reseñaJuego: this.reseñaJuego
+        };
+    }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const gameForm = document.querySelector("#game-form");
-  const editForm = document.querySelector("#edit-form");
-  const gameTable = document.querySelector("#game-table tbody");
+function guardarJuegos(juegos) {
+    localStorage.setItem('juegos', JSON.stringify(juegos.map(juego => juego.toJSON())));
+}
 
-  let editIndex = null;
-
-  // Load games from localStorage
-  function loadGames() {
-    const games = JSON.parse(localStorage.getItem("games")) || [];
-    gameTable.innerHTML = "";
-
-    games.forEach((game, index) => {
-      const row = document.createElement("tr");
-      row.innerHTML = `
-                <td>${index + 1}</td>
-                <td><img src="${game.image}" alt="${
-        game.name
-      }" class="img-thumbnail" style="width: 60px;"></td>
-                <td>${game.name}</td>
-                <td>${game.genre}</td>
-                <td>${game.platform}</td>
-                <td>
-                    <button class="btn btn-success me-2" data-index="${index}" onclick="viewGame(${index})">Ver</button>
-                    <button class="btn btn-warning me-2" data-index="${index}" onclick="editGame(${index})">Editar</button>
-                    <button class="btn btn-danger" data-index="${index}" onclick="deleteGame(${index})">Borrar</button>
-                </td>
-            `;
-      gameTable.appendChild(row);
-    });
-  }
-
-  // Save game to localStorage
-  function saveGame(game) {
-    const games = JSON.parse(localStorage.getItem("games")) || [];
-    games.push(game);
-    localStorage.setItem("games", JSON.stringify(games));
-    loadGames();
-  }
-
-  // Update game in localStorage
-  function updateGame(index, updatedGame) {
-    const games = JSON.parse(localStorage.getItem("games")) || [];
-    games[index] = updatedGame;
-    localStorage.setItem("games", JSON.stringify(games));
-    loadGames();
-  }
-
-  function deleteGame(index) {
-    const games = JSON.parse(localStorage.getItem("games")) || [];
-    games.splice(index, 1);
-    localStorage.setItem("games", JSON.stringify(games));
-    loadGames();
-  }
-
-  gameForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const name = document.querySelector("#game-name").value;
-    const genre = document.querySelector("#game-genre").value;
-    const platform = document.querySelector("#game-platform").value;
-    const image = document.querySelector("#game-image").value;
-
-    const newGame = new Game(name, genre, platform, image);
-    saveGame(newGame);
-
-    gameForm.reset();
-    const modal = bootstrap.Modal.getInstance(
-      document.querySelector("#addGameModal")
-    );
-    modal.hide();
-  });
-
-  editForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const name = document.querySelector("#edit-name").value;
-    const genre = document.querySelector("#edit-genre").value;
-    const platform = document.querySelector("#edit-platform").value;
-    const image = document.querySelector("#edit-image").value;
-
-    const updatedGame = new Game(name, genre, platform, image);
-    updateGame(editIndex, updatedGame);
-
-    editForm.reset();
-    const modal = bootstrap.Modal.getInstance(
-      document.querySelector("#editGameModal")
-    );
-    modal.hide();
-  });
-
-  loadGames();
-
-  window.editGame = function (index) {
-    editIndex = index;
-    const games = JSON.parse(localStorage.getItem("games")) || [];
-    const game = games[index];
-
-    document.querySelector("#edit-name").value = game.name;
-    document.querySelector("#edit-genre").value = game.genre;
-    document.querySelector("#edit-platform").value = game.platform;
-    document.querySelector("#edit-image").value = game.image;
-
-    const editModal = new bootstrap.Modal(
-      document.querySelector("#editGameModal")
-    );
-    editModal.show();
-  };
-
-  window.deleteGame = function (index) {
-    if (confirm("¿Está seguro de que desea eliminar este juego?")) {
-      deleteGame(index);
+function cargarJuegos() {
+    const juegosJSON = localStorage.getItem('juegos');
+    if (juegosJSON) {
+        const juegosArray = JSON.parse(juegosJSON);
+        return juegosArray.map(j => new Juego(j.id, j.nombreJuego, j.descripcionJuego, j.precioJuego, j.duracionJuego, j.tipoJuego, j.imagenJuego, j.reseñaJuego));
     }
-  };
+    return [];
+}
 
-  window.viewGame = function (index) {
-    const games = JSON.parse(localStorage.getItem("games")) || [];
-    const game = games[index];
-    alert(
-      `Nombre: ${game.name}\nGénero: ${game.genre}\nPlataforma: ${game.platform}\nImagen: ${game.image}`
-    );
-  };
+let juegos = cargarJuegos();
+
+function renderizarTabla() {
+    const tbody = document.querySelector('#tablaServicios');
+    tbody.innerHTML = '';
+
+    juegos.forEach(juego => {
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+            <td>${juego.nombreJuego}</td>
+            <td>${juego.descripcionJuego}</td>
+            <td>${juego.precioJuego}</td>
+            <td>${juego.duracionJuego}</td>
+            <td>${juego.tipoJuego}</td>
+            <td><img src="${juego.imagenJuego}" alt="${juego.nombreJuego}" width="100"></td>
+            <td>${juego.reseñaJuego}</td>
+            <td>
+                <button class="btn btn-primary btn-sm ver-detalle" data-id="${juego.id}">Ver</button>
+                <button class="btn btn-warning btn-sm editar-juego" data-id="${juego.id}">Editar</button>
+                <button class="btn btn-danger btn-sm eliminar-juego" data-id="${juego.id}">Eliminar</button>
+            </td>
+        `;
+        tbody.appendChild(fila);
+    });
+
+    // Asignar eventos a los botones después de que se hayan creado
+    document.querySelectorAll('.ver-detalle').forEach(btn => {
+        btn.addEventListener('click', (event) => {
+            const id = event.target.getAttribute('data-id');
+            verDetalleJuego(id);
+        });
+    });
+
+    document.querySelectorAll('.editar-juego').forEach(btn => {
+        btn.addEventListener('click', (event) => {
+            const id = event.target.getAttribute('data-id');
+            editarJuego(id);
+        });
+    });
+
+    document.querySelectorAll('.eliminar-juego').forEach(btn => {
+        btn.addEventListener('click', (event) => {
+            const id = event.target.getAttribute('data-id');
+            eliminarJuego(id);
+        });
+    });
+}
+
+document.getElementById('btnNuevo').addEventListener('click', () => {
+    abrirModal();
 });
+
+window.verDetalleJuego = (id) => {
+    window.location.href = `/pages/detalleProducto.html?id=${id}`;
+};
+
+function abrirModal(juego = null) {
+    const modalLabel = document.getElementById('juegoModalLabel');
+    const juegoForm = document.getElementById('juegoForm');
+    const juegoId = document.getElementById('juegoId');
+    const nombreJuego = document.getElementById('nombreJuego');
+    const descripcionJuego = document.getElementById('descripcionJuego');
+    const precioJuego = document.getElementById('precioJuego');
+    const duracionJuego = document.getElementById('duracionJuego');
+    const tipoJuego = document.getElementById('tipoJuego');
+    const imagenJuego = document.getElementById('imagenJuego');
+    const reseñaJuego = document.getElementById('reseñaJuego');
+
+    if (juego) {
+        modalLabel.textContent = 'Editar Juego';
+        juegoId.value = juego.id;
+        nombreJuego.value = juego.nombreJuego;
+        descripcionJuego.value = juego.descripcionJuego;
+        precioJuego.value = juego.precioJuego;
+        duracionJuego.value = juego.duracionJuego;
+        tipoJuego.value = juego.tipoJuego;
+        imagenJuego.value = juego.imagenJuego;
+        reseñaJuego.value = juego.reseñaJuego;
+    } else {
+        modalLabel.textContent = 'Agregar Juego';
+        juegoForm.reset();
+        juegoId.value = '';
+    }
+
+    const modal = new bootstrap.Modal(document.getElementById('juegoModal'));
+    modal.show();
+
+    juegoForm.onsubmit = function (event) {
+        event.preventDefault();
+
+        const nuevoJuego = new Juego(
+            juegoId.value || null,
+            nombreJuego.value,
+            descripcionJuego.value,
+            precioJuego.value,
+            duracionJuego.value,
+            tipoJuego.value,
+            imagenJuego.value,
+            reseñaJuego.value
+        );
+
+        if (juegoId.value) {
+            const index = juegos.findIndex(j => j.id === juegoId.value);
+            juegos[index] = nuevoJuego;
+        } else {
+            juegos.push(nuevoJuego);
+        }
+
+        guardarJuegos(juegos);
+        renderizarTabla();
+        modal.hide();
+    };
+}
+
+function editarJuego(id) {
+    const juego = juegos.find(j => j.id === id);
+    abrirModal(juego);
+}
+
+function eliminarJuego(id) {
+    juegos = juegos.filter(j => j.id !== id);
+    guardarJuegos(juegos);
+    renderizarTabla();
+}
+
+document.addEventListener('DOMContentLoaded', renderizarTabla);

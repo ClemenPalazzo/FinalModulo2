@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="./css/modal.css" />
   <link rel="stylesheet" href="./css/contacto.css" />
-  <link rel="stylesheet" href="./css/responsive.css" /> 
+  <link rel="stylesheet" href="./css/responsive.css" /> <!-- Add this line -->
 </head>
 <body>
   <header>
@@ -37,6 +37,7 @@
                 <img src="../img/logoPrincipal.jpg" alt="Logo HardDrive" class="w-100" />
               </a>
         
+              <!-- Toggler button for mobile -->
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -84,7 +85,7 @@
                   </li>
                 </ul>
         
-             
+                <!-- Search Form (visible on medium to large screens) -->
                 <form class="d-none d-md-block ms-md-4">
                   <div class="input-group">
                     <input
@@ -101,7 +102,7 @@
                 </form>
               </div>
         
-              
+              <!-- Search Form (visible on small screens) -->
               <form class="d-md-none my-2">
                 <div class="input-group">
                   <input
@@ -121,7 +122,9 @@
   </header>
 
   <main>
-
+    <!-- Modal -->
+    <div class="modal fade" id="mi-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="exampleModalLabel">CARRITO <i class="bi bi-cart3"></i></h1>
@@ -176,8 +179,8 @@
       <div class="container-fluid">
         <h1 class="text-center">Toma tus propias decisiones</h1>
       </div>
-
-
+    </div>
+  <div id="padre"></div>
     <!-- Productos destacados -->
     <div class="container my-5">
       <div class="row">
