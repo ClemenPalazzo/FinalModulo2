@@ -21,13 +21,13 @@ const analizarCuenta = (e) =>{
         const passRegistrado = listaUsuario.find(listaUsuario => listaUsuario.password === passwordL.value)
         if(mailRegistrado && passRegistrado){
             window.location.href = '../index.html'
-        }
-    } else if (n == false){
-        const error = document.createElement('h6');
-        error.innerHTML = 'El email o la contraseña es incorrecta'
-        error.className = 'text-center text-danger'
-        formularioLogin.prepend (error)
-        n = true;
+        }else if (n == false){
+            const error = document.createElement('h6');
+            error.innerHTML = 'El email o la contraseña es incorrecta'
+            error.className = 'text-center text-danger'
+            formularioLogin.prepend (error)
+            n = true;
+    } 
     }
 }
 //logica del crud (Login)
