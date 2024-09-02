@@ -21,129 +21,81 @@
     <link rel="stylesheet" href="../css/productos.css">
     <link rel="stylesheet" href="../css/contacto.css">
     <link rel="stylesheet" href="../css/style.css">
-   
-   
-
     <title>HardDrive</title>
   </head>
- 
   <body>
- 
   <header>
     <!-- Etiqueta abierta código isma modal -->
-    <nav class="navbar navbar-expand-lg pt-md-4 px-md-5 bg-black">
-      <div class="container-fluid justify-content-end justify-content-md-center justify-content-between">
-        <a href="#" class="w-25 d-block d-lg-none">
-          <img src="../img/logoPrincipal.jpg" alt="LohoHardDrive" class="w-100" />
-        </a>
-        <a href="../index.html" class="w-25 d-none d-lg-block text-decoration-none">
-          <img src="../img/logoPrincipal.jpg" alt="Logo HardDrive" class="w-50" />
-          <p class="text-center w-50 text-decoration-none text-light lead">
-            HardDrive
-          </p>
-        </a>
-        <form class="d-none d-md-block">
-          <div class="input-group">
-            <input type="search" class="form-control" placeholder="Buscar producto" aria-label="Buscar producto" />
-            <button class="btn btn-outline-secondary text-light" type="button">
-              <i class="bi bi-search"></i>
+    
+      <nav class="navbar navbar-expand-lg pt-md-4 px-md-5 bg-black">
+          <div class="container-fluid justify-content-between">
+            <a href="../index.html" class="navbar-brand d-none d-lg-block">
+              <img src="../img/logoPrincipal.jpg" alt="Logo HardDrive" class="w-50" />
+            </a>
+            <a href="#" class="navbar-brand d-block d-lg-none">
+              <img src="../img/logoPrincipal.jpg" alt="Logo HardDrive" class="w-100" />
+            </a>
+      
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
             </button>
+      
+            <div class="collapse navbar-collapse justify-content-md-end" id="navbarNavDropdown">
+              <ul class="navbar-nav align-items-md-center">
+                <li class="nav-item">
+                  <a class="nav-link active fs-5 me-3" aria-current="page" href="./pages/registro.html">Registro</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fs-5 me-3" href="../pages/SobreNosotros.html">¿Quiénes somos?</a>
+                </li>
+                <li class="nav-item dropdown fs-5">
+                  <a class="nav-link dropdown-toggle me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Productos
+                  </a>
+                  <ul class="dropdown-menu bg-black py-1 border-0 rounded-0">
+                    <li><a class="dropdown-item px-3" href="../pages/Productos.html">Tienda</a></li>
+                    <li><a class="dropdown-item px-3" href="../pages/Erro404.html">Juegos</a></li>
+                    <li><a class="dropdown-item px-3" href="../pages/Erro404.html">Consolas</a></li>
+                    <li><a class="dropdown-item px-3" href="../pages/Erro404.html">Controles</a></li>
+                    <li><a class="dropdown-item px-3" href="../pages/Erro404.html">Periféricos</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link fs-5 me-3" href="../pages/Erro404.html">Ofertas</a>
+                </li>
+                <li class="nav-item dropdown fs-5">
+                  <a class="nav-link dropdown-toggle me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Más
+                  </a>
+                  <ul class="dropdown-menu bg-black py-1 border-0 rounded-0">
+                    <li><a class="dropdown-item px-3" href="./pages/contactos.html">Contáctanos</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item me-3 d-none d-md-flex">
+                  <a class="nav-link fs-5 d-inline-flex flex-row-reverse align-items-center" href="./login.html">
+                    Entrar<i class="bi bi-person-circle pe-2 fs-2"></i>
+                  </a>
+                </li>
+                <li class="nav-item me-3 d-none d-md-flex">
+                  <a class="nav-link" href="#">
+                    <i class="bi bi-cart3 fs-2" data-bs-toggle="modal" data-bs-target="#mi-modal"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+      
+         
+           
           </div>
-        </form>
-        <div>
-          <a href="#" class="text-decoration-none text-light d-md-none">
-            <i class="bi bi-cart3 fs-2" data-bs-toggle="modal" data-bs-target="#mi-modal">
-            </i>
-            <!-- <i class="bi bi-cart3 fs-1 align-bottom ms-md-3 d-md-none"></i> -->
-          </a>
-          <a href="#" class="text-decoration-none text-light mx-3 d-md-none">
-            <i class="bi bi-person-circle fs-1 align-bottom"></i>
-          </a>
-          <a href="#" class="text-decoration-none text-light d-md-none">
-            <i class="bi bi-search fs-1 align-bottom me-2"></i>
-          </a>
-          <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-        <div class="collapse navbar-collapse justify-content-md-end" id="navbarNavDropdown">
-          <ul class="navbar-nav align-items-md-center">
-            <li class="nav-item">
-              <a class="nav-link active fs-5 me-3" aria-current="page" href="./registro.html">Registro</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fs-5 me-3" href="./SobreNosotros.html">¿Quienes somos?</a>
-            </li>
-            <li class="nav-item dropdown fs-5">
-              <a class="nav-link dropdown-toggle me-3" href="./Productos.html" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Productos
-              </a>
-              <ul class="dropdown-menu bg-black py-1 border-0 rounded-0">
-                <li>
-                  <a class="dropdown-item px-3" href="./Productos.html">Tienda</a>
-                </li>
-                <li><a class="dropdown-item px-3" href="./Erro404.html">Juegos</a></li>
-                <li>
-                  <a class="dropdown-item px-3" href="./Erro404.html">Consolas</a>
-                </li>
-                <li>
-                  <a class="dropdown-item px-3" href="./Erro404.html">Controles</a>
-                </li>
-                <li>
-                  <a class="dropdown-item px-3" href="./Erro404.html">Perifericos</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fs-5 me-3" href="./Erro404.html">Ofertas</a>
-            </li>
+</nav>
 
-            <li class="nav-item dropdown fs-5">
-              <a class="nav-link dropdown-toggle me-3" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Más
-              </a>
-              <ul class="dropdown-menu bg-black py-1 border-0 rounded-0">
-                <li>
-                  <a class="dropdown-item px-3" href="./contactos.html">Contactanos</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item me-3 d-none d-md-flex">
-              <a class="nav-link fs-5 d-inline-flex flex-row-reverse align-items-center" href="./login.html">Entrar
-                <i class="bi bi-person-circle pe-2 fs-2"></i>
-              </a>
-            </li>
-            <li class="nav-item me-3 d-none d-md-flex">
 
-              <a class="nav-link" href="#">
-
-                <i class="bi bi-cart3 fs-2" data-bs-toggle="modal" data-bs-target="#mi-modal">
-                </i>
-
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
   </header>
-
-  </div>
-
-  
-
-  
-
   <!--modal -->
   <div class="modal fade right" id="mi-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-
           <h1 class="modal-title" id="exampleModalLabel">CARRITO <i class="bi bi-cart3"></i></h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
@@ -186,57 +138,42 @@
             <p class="precioCarrito">$20.000.00</p>
             <p class="nombreCarrito">Monitor</p>
             <i class="precioCarrito bi bi-x-lg"></i>
-
-
           </div>
         </div>
-
-
         <div class="modal-footer">
           <div>
             <h2>TOTAL=$145.000.00</h2>
             <br>
             <a href="../pages/Erro404.html"><button class="buttoncomprar">COMPRAR</button></a>
           </div>
-
-
         </div>
-
       </div>
-
     </div>
-
   </div>
-
-
-
-
- 
-
     <main>
       <section class="container text-center">
-        <h2>Crea una cuenta</h2>
+        <h2 class="mt-3 fw-bold">Crea una cuenta</h2>
         <p>
-          Si aún no tenés cuenta aquí podes hacerte una y comenzar a disfrutar
+          Si aún no tenés cuenta, aquí podes hacerte una y comenzar a disfrutar
           de nuestros beneficios.
         </p>
         <article class="container-fluid">
-          <div class="row bg-body-secondary">
-            <div class="col-12 col-md-6 col-lg-6 d-none d-md-block">
+          <div class="row bg-body-secondary justify-content-lg-evenly pt-3">
+            <div class="col-12 col-md-6 col-lg-6 d-none d-md-block align-content-center">
               <figure>
                 <img
                   src="../img/registroImagen.jpg"
                   alt="registro"
-                  class="img-fluid"
+                  class="img-fluid border border-bg-ligth border-3"
                 />
               </figure>
             </div>
             <div
-              class="col-12 col-md-6 col-lg-6 border border-bg-ligth border-2"
+              class="col-12 col-md-6 col-lg-6 mb-2"
             >
               <form class="row text-start bg-body-dark">
                 <div class="row">
-                  <div class="mb-3 col-6">
+                  <div class="mb-2 col-6">
                     <label class="form-label mt-2">Nombre(*)</label>
                     <input
                       type="text"
@@ -247,7 +184,7 @@
                       required
                     />
                   </div>
-                  <div class="mb-3 col-6">
+                  <div class="mb-2 col-6">
                     <label class="form-label mt-2">Apellido(*)</label>
                     <input
                       type="text"
@@ -259,7 +196,7 @@
                     />
                   </div>
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
                   <label class="form-label"
                     >Elija un nombre de usuario(*)</label
                   >
@@ -272,7 +209,7 @@
                     required
                   />
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
                   <label class="form-label">Email(*)</label>
                   <input
                     type="email"
@@ -283,7 +220,7 @@
                     required
                   />
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
                   <label class="form-label">Teléfono</label>
                   <input
                     type="tel"
@@ -293,7 +230,7 @@
                     maxlength="15"
                   />
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
                   <label class="form-label">Domicilio</label>
                   <input
                     type="text"
@@ -303,7 +240,7 @@
                     maxlength="350"
                   />
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
                   <label class="form-label">Código postal </label>
                   <input
                     type="number"
@@ -313,7 +250,7 @@
                     maxlength="8"
                   />
                 </div>
-                <div class="mb-3">
+                <div class="mb-2">
                   <label class="form-label">Contraseña(*)</label>
                   <input
                     type="password"
@@ -324,7 +261,7 @@
                     required
                   />
                 </div>
-                <div class="mb-3">
+                <div class="">
                   <label class="form-label">Repita la contraseña(*)</label>
                   <input
                     type="password"
@@ -335,8 +272,8 @@
                     required
                   />
                 </div>
-                <p>Los campos con (*) son obligatorios</p>
-                <div class="form-check ms-2">
+                <p class="mt-4 mb-2">Los campos con (*) son obligatorios</p>
+                <div class="form-check ms-2 mb-3 mt-2">
                   <input
                     class="form-check-input"
                     type="checkbox"
@@ -351,7 +288,7 @@
                   >
                 </div>
                 <div class="text-center mt-2">
-                  <button type="submit" class="btn color-pagina">Enviar</button>
+                  <button type="submit" class="buttoncomprar">Enviar</button>
                 </div>
                 <div class="col-md-1 col-lg-1"></div>
               </form>
