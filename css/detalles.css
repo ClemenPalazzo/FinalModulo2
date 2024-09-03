@@ -6,11 +6,12 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    filter: brightness(150%);
   }
 
 
  .contenedor-de-productos{
-    background-color: rgba(33, 32, 32, 0.436);
+    background-color: rgba(0, 0, 0, 0.571);
     border: 5px solid black;
     border-radius: 20px;
  } 
@@ -30,5 +31,32 @@
 mark{padding: 10px;
      margin-top: 20px;
      margin-bottom: 20px;
-    background:rgba(208, 6, 154, 0.63);
+    background:rgb(0, 0, 0);
+    color: aliceblue;
+    box-shadow: 2px 0px 0px 0px white;
     border-radius: 10px;}
+
+   /* Estilo para el contenedor de la imagen */
+.image-container {
+   position: relative;
+   display: inline-block;
+ }
+ 
+ img {
+   display: block;
+   width: 100%; 
+   height: auto; 
+   filter: grayscale(100%);
+   animation: colorize 5s ease-in-out infinite; 
+ }
+ 
+ @keyframes colorize {
+   0% {
+     filter: grayscale(100%); 
+   }
+   50% {
+     filter: grayscale(0%); 
+   }
+   100% {
+     filter: grayscale(100%); 
+ }}
