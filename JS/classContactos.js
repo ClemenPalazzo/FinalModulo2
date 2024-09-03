@@ -2,17 +2,20 @@ export class Contacto {
   #id;
   #nombre;
   #apellido;
+  #nombreUsuario;
   #mail;
-  #contraseña;
-  #foto;
+  #telefono
+  #password;
+ 
 
-  constructor(nombre, apellido, mail, contraseña, foto) {
+  constructor(nombre, apellido, nombreUsuario, mail, telefono, password) {
     this.#id = crypto.randomUUID();
     this.#nombre = nombre;
     this.#apellido = apellido;
+    this.#nombreUsuario=nombreUsuario
     this.#mail = mail;
-    this.#contraseña = contraseña;
-    this.#foto = foto;
+    this.#telefono = telefono;
+    this.#password = password;
   }
   get id() {
     return this.#id;
@@ -32,31 +35,41 @@ export class Contacto {
   set apellido(value) {
     this.#apellido = value;
   }
+  get nombreUsuario() {
+    return this.#nombreUsuario;
+  }
+  set nombreUsuario(value) {
+    this.#nombreUsuario = value;
+  }
   get mail() {
     return this.#mail;
   }
   set mail(value) {
     this.#mail = value;
   }
-  get contraseña() {
-    return this.#contraseña;
+  get telefono() {
+    return this.#telefono;
   }
-  set contraseña(value) {
-    this.#contraseña = value;
+  set telefono(value) {
+    this.#telefono = value;
   }
-  get foto() {
-    return this.#foto;
+  get password() {
+    return this.#password;
   }
-  set foto(value) {
-    this.#foto = value;
+  set password(value) {
+    this.#password = value;
   }
+
   toJSON() {
     return {
       id: this.id,
       nombre: this.nombre,
       apellido: this.apellido,
+      nombreUsuario: this.nombreUsuario,
       mail: this.mail,
-      foto: this.foto,
+      telefono: this.telefono,
+      password: this.password,
+  
     };
   }
 }
