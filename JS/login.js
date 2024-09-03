@@ -2,7 +2,6 @@ import { Contacto } from "./classContactos.js";
 
 //Variables 
 const Administrador = new Contacto ('Santiago', 'Rodriguez', 'Santirod7','santiara010@gmail.com','3813566953','santi123')
-console.log(Administrador)
 
 const formularioLogin = document.getElementById('formLogin');
 const emailL = document.getElementById('emailL');
