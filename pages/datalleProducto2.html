@@ -419,7 +419,7 @@
             <h3>Comentarios y Calificaciones</h3>
             <hr />
             <!-- Formulario de comentarios -->
-            <form>
+            <form id="comentariosForm">
               <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre:</label>
                 <input type="text" class="form-control" id="nombre" required />
@@ -438,11 +438,11 @@
                   >Calificación:</label
                 >
                 <select class="form-select" id="calificacion" required>
-                  <option value="5">5 Estrellas</option>
-                  <option value="4">4 Estrellas</option>
-                  <option value="3">3 Estrellas</option>
-                  <option value="2">2 Estrellas</option>
-                  <option value="1">1 Estrella</option>
+                  <option value="5">⭐⭐⭐⭐⭐</option>
+                  <option value="4">⭐⭐⭐⭐</option>
+                  <option value="3">⭐⭐⭐</option>
+                  <option value="2">⭐⭐</option>
+                  <option value="1">⭐</option>
                 </select>
               </div>
               <a href="./pages/Erro404.html"
@@ -450,6 +450,14 @@
               >
             </form>
             <!-- Fin del formulario de comentarios -->
+            <div id="resumenCalificacion" class="mt-4">
+              <hr>
+              <h4 class="display-5">Calificación del juego:</h4>
+              <p id="promedioCalificacion">No hay calificaciones aún</p>
+             </div>
+             <div id="comentariosContainer" class="mt-4">
+              <h4>Comentarios:</h4>
+             </div>
           </div>
           <!-- Fin de comentarios y calificaciones -->
         </div>
@@ -701,5 +709,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="../js/app.js"></script>
-  </body>
+    <script src="../JS/comentarios2.js"></script>
 </html>
