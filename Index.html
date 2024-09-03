@@ -41,20 +41,10 @@
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-        
               <div class="collapse navbar-collapse justify-content-md-end" id="navbarNavDropdown">
-                <ul class="navbar-nav align-items-md-center">
-                 
-                  <li class="nav-item">
-                    <a
-                      class="nav-link active fs-6 me-3"
-                      aria-current="page"
-                      href="./pages/admin.html"
-                      >Administrador</a>
-                  </li>
-                 
-                  <li class="nav-item">
-                    <a class="nav-link active fs-5 me-3" aria-current="page" href="./pages/registro.html">Registro</a>
+                <ul class="navbar-nav align-items-md-center">      
+                  <li id="listaAdmin" class="nav-item">
+                    <a id="listaUsuario" class="nav-link fs-5 me-3" aria-current="page" href="./pages/registro.html">Registro</a>
                   </li>
                   
                   <li class="nav-item">
@@ -83,7 +73,7 @@
                       <li><a class="dropdown-item px-3" href="./pages/contactos.html">Contáctanos</a></li>
                     </ul>
                   </li>
-                  <li class="nav-item me-3 d-none d-md-flex">
+                  <li id="perfil" class="nav-item me-3 d-none d-md-flex">
                     <a class="nav-link fs-5 d-inline-flex flex-row-reverse align-items-center" href="./pages/login.html">
                       Entrar<i class="bi bi-person-circle pe-2 fs-2"></i>
                     </a>
@@ -548,6 +538,7 @@
     crossorigin="anonymous"
   ></script>
  <script src="./JS/filtro.js"></script>
- <script src="./JS/login.js"></script>
+ <script src="./JS/usuarioAdmin.js"></script>
+ <script src="./JS/usuarioNormal.js"></script>
 </body>
 </html>
