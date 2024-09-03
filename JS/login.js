@@ -1,105 +1,36 @@
-(() => {
-    const STORED_EMAIL = "juanperez@harddrive.com";
-    const STORED_PASSWORD = "juan$Perez328";
-  
-    const form = document.querySelector("form");
-    const emailInput = form.querySelector('input[type="email"]');
-    const passwordInput = form.querySelector('input[type="password"]');
-    const navbar = document.querySelector(".navbar-nav");
-  
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,16}$/;
-  
-    function init() {
-      form.addEventListener("submit", handleLogin);
-    }
-  
-    function handleLogin(event) {
-      event.preventDefault();
-  
-      const email = emailInput.value.trim();
-      const password = passwordInput.value.trim();
-  
-      if (!validateEmail(email)) {
-        showAlert("error", "Email inválido", "Por favor, ingrese un email válido.");
-        emailInput.focus();
-        return;
-      }
-  
-      if (!validatePassword(password)) {
-        showAlert(
-          "error",
-          "Contraseña inválida",
-          "La contraseña debe tener entre 8 y 16 caracteres, incluyendo al menos una letra mayúscula, una minúscula, un número y un carácter especial."
-        );
-        passwordInput.focus();
-        return;
-      }
-  
-      if (isValidLogin(email, password)) {
-        updateNavbarForLoggedInUser();
-        showAlert("success", "¡Bienvenido!", "Has iniciado sesión correctamente.");
-      } else {
-        showAlert(
-          "error",
-          "Credenciales incorrectas",
-          "Por favor, verifica tu email y contraseña."
-        );
-        resetForm();
-      }
-    }
-  
-    function validateEmail(email) {
-      return emailRegex.test(email);
-    }
-  
-    function validatePassword(password) {
-      return passwordRegex.test(password);
-    }
-  
-    function isValidLogin(email, password) {
-      return email === STORED_EMAIL && password === STORED_PASSWORD;
-    }
-  
-    function updateNavbarForLoggedInUser() {
-      const loginLink = navbar.querySelector('a[href="../pages/login.html"]');
-  
-      if (loginLink) {
-        loginLink.textContent = "Cerrar sesión";
-        loginLink.href = "#";
-        loginLink.classList.add("logout-link");
-        loginLink.removeEventListener("click", handleLogin);
-        loginLink.addEventListener("click", handleLogout);
-      }
-    }
-  
-    function handleLogout(event) {
-      event.preventDefault();
-      Swal.fire({
-        icon: "info",
-        title: "Cierre de sesión",
-        text: "Has cerrado sesión exitosamente.",
-        timer: 2000,
-        showConfirmButton: false,
-        didClose: () => {
-          location.reload();
-        },
-      });
-    }
-  
-    function resetForm() {
-      form.reset();
-      emailInput.focus();
-    }
-  
-    function showAlert(icon, title, text) {
-      Swal.fire({
-        icon: icon,
-        title: title,
-        text: text,
-      });
-    }
-  
-    document.addEventListener("DOMContentLoaded", init);
-  })();
-  
+document.addEventListener("DOMContentLoaded", () => {
+    const STORED_ADMIN_EMAIL = "admin@gmail.com";
+    const STORED_ADMIN_PASSWORD = "43499204a";
+
+    const form = document.getElementById("loginForm");
+    const emailInput = document.getElementById("email1");
+    const passwordInput = document.getElementById("contrasena");
+
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const email = emailInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        console.log("Email ingresado:", email);
+        console.log("Contraseña ingresada:", password);
+
+        if (email === STORED_ADMIN_EMAIL && password === STORED_ADMIN_PASSWORD) {
+            console.log("Redirigiendo a la página del administrador...");
+            window.location.href = "./admin.html"; // Verifica que esta ruta sea correcta
+        } else {
+            console.log("Buscando usuario en local storage...");
+
+            const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+            const usuarioEncontrado = usuarios.find(u => u.email === email && u.password === password);
+
+            if (usuarioEncontrado) {
+                console.log("Usuario encontrado:", usuarioEncontrado);
+                window.location.href = "../Index.html"; // Verifica que esta ruta sea correcta
+            } else {
+                console.log("Usuario no encontrado, mostrando mensaje de error.");
+                alert("Usuario no encontrado. Verifica tus credenciales o regístrate.");
+            }
+        }
+    });
+});
