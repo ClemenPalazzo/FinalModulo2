@@ -14,5 +14,21 @@ height: 700px;
 object-fit: cover;
 object-position: bottom;
 }
+.bg-imagen {
+  background-image: url('../img/BanerTriangulos.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; 
+}
+.buttoncomprar {
+  background-color: #ff00f200; 
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
 
-  
+.buttoncomprar:hover {
+  background-color: #b400e600; 
+}
