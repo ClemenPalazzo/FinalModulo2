@@ -25,194 +25,137 @@
 </head>
 
 <body>
-  <!-- navbar -->
-
-
-  <body>
     <header>
       <nav class="navbar navbar-expand-lg pt-md-4 px-md-5 bg-black">
-        <div class="container-fluid justify-content-end justify-content-md-center justify-content-between">
-          <a href="#" class="w-25 d-block d-lg-none">
-            <img src="../img/logoPrincipal.jpg" alt="LohoHardDrive" class="w-100" />
-          </a>
-          <a href="../index.html" class="w-25 d-none d-lg-block text-decoration-none">
-            <img src="../img/logoPrincipal.jpg" alt="Logo HardDrive" class="w-50" />
-            <p class="text-center w-50 text-decoration-none text-light lead">
-              HardDrive
-            </p>
-          </a>
-          <form class="d-none d-md-block">
-            <div class="input-group">
-              <input type="search" class="form-control" placeholder="Buscar producto" aria-label="Buscar producto" />
-              <button class="btn btn-outline-secondary text-light" type="button">
-                <i class="bi bi-search"></i>
-              </button>
-            </div>
-          </form>
-          <div>
-            <a href="#" class="text-decoration-none text-light d-md-none">
-              <i class="bi bi-cart3 fs-2" data-bs-toggle="modal" data-bs-target="#mi-modal">
-              </i>
-              <!-- <i class="bi bi-cart3 fs-1 align-bottom ms-md-3 d-md-none"></i> -->
-            </a>
-            <a href="#" class="text-decoration-none text-light mx-3 d-md-none">
-              <i class="bi bi-person-circle fs-1 align-bottom"></i>
-            </a>
-            <a href="#" class="text-decoration-none text-light d-md-none">
-              <i class="bi bi-search fs-1 align-bottom me-2"></i>
-            </a>
-            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          </div>
-          <div class="collapse navbar-collapse justify-content-md-end" id="navbarNavDropdown">
-            <ul class="navbar-nav align-items-md-center">
-              <li class="nav-item">
-                <a class="nav-link active fs-5 me-3" aria-current="page" href="../pages/registro.html">Registro</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-5 me-3" href="../pages/SobreNosotros.html">¿Quienes somos?</a>
-              </li>
-              <li class="nav-item dropdown fs-5">
-                <a class="nav-link dropdown-toggle me-3" href="./Productos.html" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Productos
+          <nav class="navbar navbar-expand-lg pt-md-4 px-md-5 bg-black">
+              <div class="container-fluid justify-content-between">
+                <a href="../Index.html" class="navbar-brand d-none d-lg-block">
+                  <img src="../img/logoPrincipal.jpg" alt="Logo HardDrive" class="w-50" />
                 </a>
-                <ul class="dropdown-menu bg-black py-1 border-0 rounded-0">
-                  <li>
-                    <a class="dropdown-item px-3" href="./Productos.html">Tienda</a>
-                  </li>
-                  <li><a class="dropdown-item px-3" href="./Erro404.html">Juegos</a></li>
-                  <li>
-                    <a class="dropdown-item px-3" href="./Erro404.html">Consolas</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item px-3" href="./Erro404.html">Controles</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item px-3" href="./Erro404.html">Perifericos</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-5 me-3" href="./Erro404.html">Ofertas</a>
-              </li>
-
-              <li class="nav-item dropdown fs-5">
-                <a class="nav-link dropdown-toggle me-3" href="#" role="button" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  Más
+                <a href="#" class="navbar-brand d-block d-lg-none">
+                  <img src="../img/logoPrincipal.jpg" alt="Logo HardDrive" class="w-100" />
                 </a>
-                <ul class="dropdown-menu bg-black py-1 border-0 rounded-0">
-                  <li>
-                    <a class="dropdown-item px-3" href="../pages/contactos.html">Contactanos</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item me-3 d-none d-md-flex">
-                <a class="nav-link fs-5 d-inline-flex flex-row-reverse align-items-center"
-                  href="../pages/login.html">Entrar
-                  <i class="bi bi-person-circle pe-2 fs-2"></i>
-                </a>
-              </li>
-              <li class="nav-item me-3 d-none d-md-flex">
-
-                <a class="nav-link" href="#">
-
-                  <i class="bi bi-cart3 fs-2" data-bs-toggle="modal" data-bs-target="#mi-modal">
-                  </i>
-
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+          
+                <!-- Toggler button for mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-md-end" id="navbarNavDropdown">
+                  <ul class="navbar-nav align-items-md-center">      
+                    <li id="listaAdmin" class="nav-item">
+                      <a id="listaUsuario" class="nav-link fs-5 me-3" aria-current="page" href="./registro.html">Registro</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                      <a class="nav-link fs-5 me-3" href="./SobreNosotros.html">¿Quiénes somos?</a>
+                    </li>
+                    <li class="nav-item dropdown fs-5">
+                      <a class="nav-link dropdown-toggle me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Productos
+                      </a>
+                      <ul class="dropdown-menu bg-black py-1 border-0 rounded-0">
+                        <li><a class="dropdown-item px-3" href="./Productos.html">Tienda</a></li>
+                        <li><a class="dropdown-item px-3" href="./Erro404.html">Juegos</a></li>
+                        <li><a class="dropdown-item px-3" href="./Erro404.html">Consolas</a></li>
+                        <li><a class="dropdown-item px-3" href="./Erro404.html">Controles</a></li>
+                        <li><a class="dropdown-item px-3" href="./Erro404.html">Periféricos</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link fs-5 me-3" href="./Erro404.html">Ofertas</a>
+                    </li>
+                    <li class="nav-item dropdown fs-5">
+                      <a class="nav-link dropdown-toggle me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Más
+                      </a>
+                      <ul class="dropdown-menu bg-black py-1 border-0 rounded-0">
+                        <li><a class="dropdown-item px-3" href="./contactos.html">Contáctanos</a></li>
+                      </ul>
+                    </li>
+                    <li id="perfil" class="nav-item me-3 d-none d-md-flex">
+                      <a class="nav-link fs-5 d-inline-flex flex-row-reverse align-items-center" href="./login.html">
+                        Entrar<i class="bi bi-person-circle pe-2 fs-2"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item me-3 d-none d-md-flex">
+                      <a class="nav-link" href="#">
+                        <i class="bi bi-cart3 fs-2" data-bs-toggle="modal" data-bs-target="#mi-modal"></i>
+                      </a>
+                    </li>
+                  </ul>
+          
+               
+                  <form class="d-none d-md-block ms-md-4">
+                    <div class="input-group">
+                      <input
+                        type="search"
+                        class="form-control"
+                        id="navSearchInput"
+                        placeholder="Buscar producto"
+                        aria-label="Buscar producto"
+                      />
+                      <button class="btn btn-outline-secondary text-light" type="button" onclick="handleSearch()">
+                        <i class="bi bi-search"></i>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+          
+              
+                <form class="d-md-none my-2">
+                  <div class="input-group">
+                    <input
+                      type="search"
+                      class="form-control"
+                      id="navSearchInputMobile"
+                      placeholder="Buscar producto"
+                      aria-label="Buscar producto"
+                    />
+                    <button class="btn btn-outline-secondary text-light" type="button" onclick="handleSearch()">
+                      <i class="bi bi-search"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </nav>
     </header>
+    <!--Modal del carrito -->
+   <div class="modal fade right" id="mi-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
 
-
-    </div>
-
-    <!--modal -->
-    <div class="modal fade right" id="mi-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-
-            <h1 class="modal-title" id="exampleModalLabel">CARRITO <i class="bi bi-cart3"></i></h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-
-          </div>
-          <div class="modal-body">
-            <div class="container-Carrito">
-              <img class="imgCarrito" src="../image/Producto-7.jpg" alt="">
-
-
-              <p class="precioCarrito">$60.000.00</p>
-              <p class="nombreCarrito">Pcgam</p>
-              <i class="precioCarrito bi bi-x-lg"></i>
-
-
-            </div>
-            <div class="container-Carrito">
-              <img class="imgCarrito" src="../image/acsesorio6.png" alt="">
-
-
-              <p class="precioCarrito">$45.000.00</p>
-              <p class="nombreCarrito">SillaG</p>
-              <i class="precioCarrito bi bi-x-lg"></i>
-
-
-            </div>
-            <div class="container-Carrito">
-              <img class="imgCarrito" src="../image/Producto-6.jpg" alt="">
-
-
-              <p class="precioCarrito">$20.000.00</p>
-              <p class="nombreCarrito">Monitor</p>
-              <i class="precioCarrito bi bi-x-lg"></i>
-
-
-            </div>
-            <div class="container-Carrito">
-              <img class="imgCarrito" src="../image/Producto-14.jpg" alt="">
-
-
-              <p class="precioCarrito">$20.000.00</p>
-              <p class="nombreCarrito">Monitor</p>
-              <i class="precioCarrito bi bi-x-lg"></i>
-
-
-            </div>
-          </div>
-
-
-          <div class="modal-footer">
-            <div>
-              <h2>TOTAL=$145.000.00</h2>
-              <br>
-              <a href="../pages/Erro404.html"><button class="buttoncomprar">COMPRAR</button></a>
-            </div>
-
-
-          </div>
+          <h1 class="modal-title" id="exampleModalLabel">CARRITO <i class="bi bi-cart3"></i></h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
         </div>
-
+        <div class="modal-body">
+          <div class="container-Carrito d-flex justify-content-between">
+            <img class="imgCarrito" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmwbIgmfj1MrBxWWCXtCy3xAeJly_91uWp7Q&s" alt="Minecraft ps4">
+            <p class="precioCarrito align-content-center">$10.000</p>
+            <p class="nombreCarrito align-content-center">Minecraft Ps4</p>
+            <i class="precioCarrito bi bi-x-lg me-1"></i>
+          </div>
+          <div class="container-Carrito d-flex justify-content-between">
+            <img class="imgCarrito" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb3MV2h7HfrjuUO6HEBr8p75fhSIJgHiz_Eg&s" alt="Cs2">
+            <p class="precioCarrito align-content-center">$15.000</p>
+            <p class="nombreCarrito align-content-center">Counter Strike 2</p>
+            <i class="precioCarrito bi bi-x-lg me-1"></i>
+         </div>
+        </div>
+        <div class="modal-footer">
+          <div>
+            <h4>Total= $25.000</h4>
+            <a href="../pages/Erro404.html"><button class="buttoncomprar">COMPRAR</button></a>
+          </div>
+        </div>
       </div>
-
     </div>
-
-
-
-
+  </div>
+  <main>
     <!-- Carrusel -->
     <h1 class="title1">ARMA TU SETUP EN HarDrive</h1>
     <div class="container-fluid contenedorCarousel">
-
-
       <div id="carouselExampleIndicators" class="carousel  Slide ">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -255,25 +198,16 @@
               <p class="parrafocontainer">Ultra-Wide y Ultra-Potente: El Setup Gamer para una Inmersión Total</p>
               <a href="./Erro404.html"><button class="buttoncomprar">Agregar</button></a>
             </div>
-
-
           </div>
           <div class="carousel-item">
             <div class="container-product">
               <img src="../image/septupgamer3.jpg" class="img" alt="...">
-
-
               <p class="parrafocontainer">Un rincón donde la tecnología se encuentra con la vibra natural. ¡Juega con
                 estilo!</p>
               <a href="./Erro404.html"><button class="buttoncomprar">Agregar</button></a>
             </div>
 
           </div>
-
-
-
-
-
           <div class="carousel-item">
             <div class="container-product">
               <img src="../image/septupgamer4.jpg" class="img" alt="...">
@@ -285,15 +219,9 @@
             </div>
 
           </div>
-
-
-
-
           <div class="carousel-item">
             <div class="container-product">
               <img src="../image/septupgamer5.jpg" class="img" alt="...">
-
-
               <p class="parrafocontainer">Un rincón donde la tecnología se encuentra con la vibra natural. ¡Juega con
                 estilo!</p>
               <a href="./Erro404.html"><button class="buttoncomprar">Agregar</button></a>
@@ -303,18 +231,8 @@
         </div>
 
       </div>
-
-
-
-
-
-
     </div>
-    <!-- productos -->
-
-
-
-    <div class="container-fluid connst ">
+   <section class="container-fluid connst ">
 
       <div class="row contenedor">
         <h1 class="title" id="1">PRODUCTOS MAS VENDIDOS</h1>
@@ -467,53 +385,8 @@
           <h3 class="name-producto">silla GamerTN Full HD 1ms HDMI VGA Audio</h3>
           <p class="precio">$11000.00</p>
           <a href="./Erro404.html"><button class="buttoncomprar">Agregar</button></a>
-
-
         </div>
-
-
-        <!-- BUTTON CHAT  -->
-        <section>
-          <button class="open_button" onclick="openForm()">
-            <i class="bi bi-chat-dots-fill"></i>
-          </button>
-          <div class="chat_popup" id="myForm">
-            <form action="" class="form_container">
-              <div class="w-100">
-                <a id="formChat" href="" class="text-decoration-none">
-                  <img src="../img/logoPrincipal.jpg" alt="logo" />HarDrive
-                </a>
-                <button type="button" class="btn-close buttonChatClose" onclick="closeForm()"
-                  aria-label="Close"></button>
-              </div>
-              <label id="msg" for="msg" class=""> Dejános tu mensaje...</label>
-              <textarea class="w-100 form-container text-start ps-3" name="msg" minlength="15" maxlength="250"
-                placeholder="Escribe un mensaje aquí..." required></textarea>
-              <a href="./Erro404.html"><button class="buttoncomprar">Agregar</button></a>
-            </form>
-          </div>
-        </section>
-
-        <!-- 
-    
-       <div class="producto">
-        <img  src="img/Producto-9.jpg" class="img-carousel" alt="...">    
-        <p class="product-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde id ipsa odit aperiam, ea laborum ipsa, cupiditate quae porro.</p>
-        <h3>nombre</h3>
-        <p>precio</p>
-        <button>Agregar</button>
-       </div>
-       <div class="producto">
-        <img  src="img/Producto-9.jpg" class="img-carousel" alt="...">    
-        <p class="product-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde id ipsa odit aperiam, ea laborum ipsa, cupiditate quae porro.</p>
-        <h3>nombre</h3>
-        <p>precio</p>
-        <button>Agregar</button>
-       </div> -->
-
-      </div>
-      <!-- Footer -->
-
+    </main>
       <footer class="bg-black py-md-5 py-3">
         <section class="container text-center text-md-start">
           <div class="row">
@@ -658,6 +531,8 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+        <script src="../JS/usuarioAdmin.js"></script>
+        <script src="../JS/usuarioNormal.js"></script>
   </body>
 
 </html>

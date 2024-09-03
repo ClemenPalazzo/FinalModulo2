@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/SobreNos.css">
     <link rel="stylesheet" href="../css/modal.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="../css/StyleProducto.css">
     <link rel="stylesheet" href="../css/contacto.css">
 </head>
@@ -182,6 +183,360 @@
 </div>
 <footer class="bg-black py-md-5 py-3">
     <section class="container text-center text-md-start">
+=======
+    <link rel="stylesheet" href="../css/StyleProducto.css" />
+    <link rel="stylesheet" href="../css/contacto.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg pt-md-4 px-md-5 bg-black">
+          <nav class="navbar navbar-expand-lg pt-md-4 px-md-5 bg-black">
+              <div class="container-fluid justify-content-between">
+                <a href="../Index.html" class="navbar-brand d-none d-lg-block">
+                  <img src="../img/logoPrincipal.jpg" alt="Logo HardDrive" class="w-50" />
+                </a>
+                <a href="#" class="navbar-brand d-block d-lg-none">
+                  <img src="../img/logoPrincipal.jpg" alt="Logo HardDrive" class="w-100" />
+                </a>
+          
+                <!-- Toggler button for mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-md-end" id="navbarNavDropdown">
+                  <ul class="navbar-nav align-items-md-center">      
+                    <li id="listaAdmin" class="nav-item">
+                      <a id="listaUsuario" class="nav-link fs-5 me-3" aria-current="page" href="./registro.html">Registro</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                      <a class="nav-link fs-5 me-3" href="./SobreNosotros.html">¿Quiénes somos?</a>
+                    </li>
+                    <li class="nav-item dropdown fs-5">
+                      <a class="nav-link dropdown-toggle me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Productos
+                      </a>
+                      <ul class="dropdown-menu bg-black py-1 border-0 rounded-0">
+                        <li><a class="dropdown-item px-3" href="./Productos.html">Tienda</a></li>
+                        <li><a class="dropdown-item px-3" href="./Erro404.html">Juegos</a></li>
+                        <li><a class="dropdown-item px-3" href="./Erro404.html">Consolas</a></li>
+                        <li><a class="dropdown-item px-3" href="./Erro404.html">Controles</a></li>
+                        <li><a class="dropdown-item px-3" href="./Erro404.html">Periféricos</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link fs-5 me-3" href="./Erro404.html">Ofertas</a>
+                    </li>
+                    <li class="nav-item dropdown fs-5">
+                      <a class="nav-link dropdown-toggle me-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Más
+                      </a>
+                      <ul class="dropdown-menu bg-black py-1 border-0 rounded-0">
+                        <li><a class="dropdown-item px-3" href="./contactos.html">Contáctanos</a></li>
+                      </ul>
+                    </li>
+                    <li id="perfil" class="nav-item me-3 d-none d-md-flex">
+                      <a class="nav-link fs-5 d-inline-flex flex-row-reverse align-items-center" href="./login.html">
+                        Entrar<i class="bi bi-person-circle pe-2 fs-2"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item me-3 d-none d-md-flex">
+                      <a class="nav-link" href="#">
+                        <i class="bi bi-cart3 fs-2" data-bs-toggle="modal" data-bs-target="#mi-modal"></i>
+                      </a>
+                    </li>
+                  </ul>
+          
+               
+                  <form class="d-none d-md-block ms-md-4">
+                    <div class="input-group">
+                      <input
+                        type="search"
+                        class="form-control"
+                        id="navSearchInput"
+                        placeholder="Buscar producto"
+                        aria-label="Buscar producto"
+                      />
+                      <button class="btn btn-outline-secondary text-light" type="button" onclick="handleSearch()">
+                        <i class="bi bi-search"></i>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+       
+                <form class="d-md-none my-2">
+                  <div class="input-group">
+                    <input
+                      type="search"
+                      class="form-control"
+                      id="navSearchInputMobile"
+                      placeholder="Buscar producto"
+                      aria-label="Buscar producto"
+                    />
+                    <button class="btn btn-outline-secondary text-light" type="button" onclick="handleSearch()">
+                      <i class="bi bi-search"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </nav>
+    </header>
+
+<!--Modal del carrito -->
+<div class="modal fade right" id="mi-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <h1 class="modal-title" id="exampleModalLabel">CARRITO <i class="bi bi-cart3"></i></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      </div>
+      <div class="modal-body">
+        <div class="container-Carrito d-flex justify-content-between">
+          <img class="imgCarrito" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmwbIgmfj1MrBxWWCXtCy3xAeJly_91uWp7Q&s" alt="Minecraft ps4">
+          <p class="precioCarrito align-content-center">$10.000</p>
+          <p class="nombreCarrito align-content-center">Minecraft Ps4</p>
+          <i class="precioCarrito bi bi-x-lg me-1"></i>
+        </div>
+        <div class="container-Carrito d-flex justify-content-between">
+          <img class="imgCarrito" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb3MV2h7HfrjuUO6HEBr8p75fhSIJgHiz_Eg&s" alt="Cs2">
+          <p class="precioCarrito align-content-center">$15.000</p>
+          <p class="nombreCarrito align-content-center">Counter Strike 2</p>
+          <i class="precioCarrito bi bi-x-lg me-1"></i>
+       </div>
+      </div>
+      <div class="modal-footer">
+        <div>
+          <h4>Total= $25.000</h4>
+          <a href="../pages/Erro404.html"><button class="buttoncomprar">COMPRAR</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <main>
+      <section class="container-fluid p-0">
+        <div>
+          <img src="../img/bannerNosotros.webp" class="w-100" alt="Banner" />
+        </div>
+      </section>
+      <section class=".accordionColor">
+        <div class="accordion" id="modalNosotros">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                <h2>Acerca de Nosotros</h2>
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#modalNosotros"
+            >
+              <div class="accordion-body">
+                <p>
+                  En el equipo de ventas de componentes de PC, nos apasiona
+                  proporcionar soluciones tecnológicas de vanguardia para
+                  satisfacer las necesidades de nuestros clientes. Con años de
+                  experiencia en la industria y un profundo conocimiento de los
+                  últimos avances en tecnología de computación, estamos aquí
+                  para ayudarte a construir la PC de tus sueños.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                <h2>Nuestra Misión</h2>
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              data-bs-parent="#modalNosotros"
+            >
+              <div class="accordion-body">
+                <p>
+                  Nuestra misión es ofrecer productos de alta calidad, un
+                  servicio excepcional y asesoramiento experto a nuestros
+                  clientes, para que puedan disfrutar de una experiencia de
+                  compra sin igual y obtener el máximo rendimiento de sus
+                  sistemas informáticos.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                <h2>¿Por Qué Elegirnos?</h2>
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              data-bs-parent="#modalNosotros"
+            >
+              <div class="accordion-body">
+                Experiencia y Conocimientos: Nuestro equipo está formado por
+                expertos apasionados por la tecnología que están siempre
+                disponibles para ofrecerte asesoramiento y recomendaciones
+                personalizadas. Calidad Garantizada: Trabajamos únicamente con
+                proveedores de confianza y ofrecemos productos de alta calidad
+                respaldados por garantías sólidas. Atención al Cliente
+                Sobresaliente: Tu satisfacción es nuestra máxima prioridad.
+                Estamos aquí para ayudarte en cada paso del proceso, desde la
+                selección de los componentes hasta el montaje y la puesta en
+                marcha de tu PC.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container-fluid bg-black">
+        <article class="d-flex flex-column align-items-center flex-sm-row flex-sm-wrap flex-md-row flex-md-wrap justify-content-evenly justify-content-lg-around">
+          <article class=" text-center h-100 mx-3 mx-md-3 mx-lg-3">
+            <div class="contenedorPerfil">
+              <img
+                src="../img/Perfil4.jpg"
+                class="w-100"
+                alt="Perfil"
+              />
+            </div>
+            <div>
+              <p>María Clemencia Palazzo Lobo</p>
+              <p><b>Fundador & CEO</b></p>
+            </div>
+          </article>
+          <article class="contenedorHijo mx-3 mx-md-3 mx-lg-3">
+            <div class="contenedorPerfil">
+              <img
+                src="../img/Perfil3.jpg"
+                class="w-100"
+                alt="Perfil"
+              />
+              </div>
+            </div>
+            <div>
+                <p>Victor Augusto Verón</p>
+                <p><b>Técnico</b></p>
+          </article>
+          <article class="contenedorHijo mx-3 mx-md-3 mx-lg-3">
+            <div class="contenedorPerfil">
+              <img
+                src="../img/Perfil6.jpg"
+                class="w-100"
+                alt="Perfil"
+              />
+            </div>
+            <div>
+              <p>Mariana Mendoza</p>
+              <p><b>Admin. de Oficina</b></p>
+            </div>
+          </article>
+          <article class="contenedorHijo mx-3 mx-md-3 mx-lg-3">
+            <div class="contenedorPerfil">
+              <img
+                src="../img/Perfil1.jpg"
+                class="w-100"
+                alt="Perfil"
+              />
+            </div>
+            <div>
+              <p>Ismael Vargas</p>
+              <p><b>Admin. de Producto</b></p>
+            </div>
+          </article>
+          <article class="contenedorHijo mx-3 mx-md-3 mx-lg-3">
+            <div class="contenedorPerfil">
+              <img
+                src="../img/Perfil2.jpg"
+                class="w-100"
+                alt="Perfil"
+              />
+            </div>
+            <div>
+              <p>Facundo Castro</p>
+              <p><b>RRHH</b></p>
+            </div>
+          </article>
+          <article class="contenedorHijo mx-3 mx-md-3 mx-lg-3">
+            <div class="contenedorPerfil">
+              <img
+                src="../img/Perfil5.jpg"
+                class="w-100"
+                alt="Perfil"
+              />
+            </div>
+            <div>
+              <p>María Victoria Gramajo</p>
+              <p><b>Atención al Cliente</b></p>
+            </div>
+          </article>
+        </article>
+      </section>
+  
+  
+  <!-- BUTTON CHAT  -->
+ <section>
+  <button class="open_button" onclick="openForm()">
+    <i class="bi bi-chat-dots-fill"></i>
+  </button>
+  <div class="chat_popup" id="myForm">
+    <form action="" class="form_container">
+      <div class="w-100">
+        <a id="formChat" href="" class="text-decoration-none">
+          <img src="../img/logoPrincipal.jpg" alt="logo" />HarDrive
+        </a>
+        <button
+          type="button"
+          class="btn-close buttonChatClose"
+          onclick="closeForm()"
+          aria-label="Close"></button>
+      </div>
+      <label id="msg" for="msg" class=""> Dejános tu mensaje...</label>
+      <textarea
+        class="w-100 form-container text-start ps-3"
+        name="msg"
+        minlength="15"
+        maxlength="250"
+        placeholder="Escribe un mensaje aquí..."
+        required></textarea>
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+  </div>
+</section>
+  
+  
+    </main>
+   
+   
+    <footer class="bg-black py-md-5 py-3">
+      <section class="container text-center text-md-start">
+>>>>>>> c9a7695f9ffa1c773aa6ea589afee2fab3470c03
         <div class="row">
             <div class="col-md-3 d-flex justify-content-center justify-content-md-start align-items-center mb-4 flex-column">
                 <img src="../img/logoPrincipal.jpg" alt="Logo HardDrive" class="w-75">
@@ -283,9 +638,23 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
     </div>
 </footer>
 <script src="../js/app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+=======
+      </div>
+    </footer>
+    <script src="../js/app.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../JS/usuarioAdmin.js"></script>
+    <script src="../JS/usuarioNormal.js"></script>
+  </body>
+>>>>>>> c9a7695f9ffa1c773aa6ea589afee2fab3470c03
 </html>
