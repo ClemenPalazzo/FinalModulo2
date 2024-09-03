@@ -10,8 +10,6 @@ Comenzamos como un proyecto de programación donde aprendimos de HTML,CSS y JS e
 Las librerias utilizadas son las siguientes:
 1. [Bootstrap v5.3](https://getbootstrap.com/)
 1. 
->[!TIP]
->
 
 ## Demo 
 Si quieres ver el demo de nuestra página, consultá [aquí](linkNetli)
