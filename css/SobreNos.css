@@ -1,15 +1,5 @@
 /* Recordatorio borrar el comentario del final */
 
-.accordion {
-    --bs-accordion-btn-bg: rgb(58, 33, 89);
-    --bs-accordion-border-color: rgb(0, 0, 0);
-    --bs-accordion-bg: rgb(0, 0, 0);
-    --bs-accordion-color: rgb(124, 124, 124);
-    --bs-accordion-btn-color: rgb(255, 255, 255);
-    --bs-accordion-btn-focus-box-shadow: rgb(0, 0, 0);
-    --bs-accordion-active-bg: rgb(134, 53, 180);
-    --bs-accordion-active-color: rgb(255, 255, 255);
-  }
   
   .contenedorPerfil {
     display: flex;
@@ -79,6 +69,37 @@
     transition-duration: 500ms;
   }
   
+  .bg-imagen {
+    background-image: url('../img/BanerTriangulos.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 50px 0;
+    color: white; /* Asegura que el texto sea visible sobre el fondo */
+}
+
+.integrantes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* Espaciado entre cada integrante */
+}
+
+.contenedorPerfil img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Añade sombra para destacar la imagen */
+}
+
+.text-center p {
+    margin: 10px 0;
+    color: #f8f9fa; /* Color blanco para los textos */
+}
+
+
   /* Colores a usar */
   /* --violet: #8858ed;
   --blue: #190f30;

@@ -180,12 +180,11 @@ function eliminarJuego(id) {
     renderizarTabla();
 }
 
-// Función para manejar la visualización de los detalles de un juego
 function verDetalleJuego(id) {
-    // Redirige a una página de detalles
+  
     window.location.href = `detalleProducto.html?id=${id}`;
 
-    // O, alternativamente, muestra los detalles en un modal o alerta:
+  
     /*
     const juego = juegos.find(j => j.id === id);
     if (juego) {
