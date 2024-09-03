@@ -35,9 +35,6 @@
                     </a>
                     <a href="../index.html" class="w-25 d-none d-lg-block text-decoration-none">
                       <img src="../img/logoPrincipal.jpg" alt="Logo HardDrive" class="w-50" />
-                      <p class="text-center w-50 text-decoration-none text-light lead">
-                        HardDrive
-                      </p>
                     </a>
                     <form class="d-none d-md-block">
                       <div class="input-group">
@@ -128,7 +125,9 @@
                   </div>
             </nav>
           </header>    
-          <!--modal -->
+       
+
+          <main class="bg-imagen d-flex align-items-center justify-content-center vh-100">
           <div class="modal fade right" id="mi-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -198,62 +197,50 @@
         
           </div>
 
-    <main>
-        <section class="container-fluid text-center">
-            <article class="my-3">
-                <div class="row">
-                    <div class="col-12 col-md-6">
-                        <figure class="d-none d-md-block contenedorimagen-lg">
-                            <img src="../img/lestplay.jpg" alt="ingresar a tu cuenta" class="w-100 h-100 imagen-lg border border-4 border-light" />
-                        </figure>
-                    </div>
-                    <div class="col-12 col-md-6 align-content-center">
-                      <h2 class="fw-bold">Ingresa a tu cuenta</h2>
-                        <form class="text-start">
-                            <div class="mb-3">
-                                <label class="form-label">Email</label>
-                                <input type="email" class="form-control border-input bg-body-secondary"
-                                    placeholder="Ej: juanperez@hardDrive" minlength="15" maxlength="320" required />
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Contraseña</label>
-                                <input type="password" class="form-control border-input bg-body-secondary"
-                                    placeholder="juan$Perez328" minlength="8" maxlength="16" required />
-                            </div>
-                            <div class="text-center mb-2">
-                                <a href="./pages/Erro404.html"><button class="buttoncomprar">Entrar</button></a>
-                            </div>
-                        </form>
-                        <div>
-                        <div class="row justify-content-center">
-                            <button type="button"
-                                class="btn btn-light aling-center mt-3 col-10 py-2"><a
-                                    class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 text-dark "
-                                    href="./Erro404.html">
-                                    <i class="bi bi-google"></i> Ingresá con tu cuenta de google</a>
-                            </button>
-                            <button type="button"
-                                class="btn btn-primary aling-center mt-3 col-10 py-2"><a
-                                    class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 text-light "
-                                    href="./Erro404.html">
-                                    <i class="bi bi-facebook"></i> Ingresá con tu cuenta de
-                                    facebook</a>
-                            </button>
-                        </div>
-                      </div>
-                        <button type="button" class="buttoncomprar mt-3"><a
-                                class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 text-light"
-                                href="../pages/registro.html">
-
-                                ¿No tenés cuenta? Registrate</a>
-                        </button>
-                    </div>
+  
+          <section class="container-fluid text-center d-flex align-items-center justify-content-center vh-100">
+            <article class="my-3 col-12 col-md-6 col-lg-4">
+              <h2 class="fw-bold">Ingresa a tu cuenta</h2>
+              <form class="text-start">
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control border-input bg-body-secondary"
+                         placeholder="Ej: juanperez@hardDrive" minlength="15" maxlength="320" required />
                 </div>
+                <div class="mb-3">
+                  <label class="form-label">Contraseña</label>
+                  <input type="password" class="form-control border-input bg-body-secondary"
+                         placeholder="juan$Perez328" minlength="8" maxlength="16" required />
+                </div>
+                <div class="text-center mb-2">
+                  <a href="./pages/Erro404.html"><button class="buttoncomprar">Entrar</button></a>
+                </div>
+              </form>
+              <div>
+                <div class="row justify-content-center">
+                  <button type="button" class="btn btn-light aling-center mt-3 col-10 py-2">
+                    <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 text-dark"
+                       href="./Erro404.html">
+                      <i class="bi bi-google"></i> Ingresá con tu cuenta de google
+                    </a>
+                  </button>
+                  <button type="button" class="btn btn-primary aling-center mt-3 col-10 py-2">
+                    <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 text-light"
+                       href="./Erro404.html">
+                      <i class="bi bi-facebook"></i> Ingresá con tu cuenta de facebook
+                    </a>
+                  </button>
+                </div>
+              </div>
+              <button type="button" class="buttoncomprar mt-3">
+                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 text-light"
+                   href="../pages/registro.html">
+                  ¿No tenés cuenta? Registrate
+                </a>
+              </button>
             </article>
-        </section>
-
-
- <!-- BUTTON CHAT  -->
+          </section>
+          
  <section>
     <button class="open_button" onclick="openForm()">
       <i class="bi bi-chat-dots-fill"></i>
