@@ -4,8 +4,7 @@ import { validarEmail } from "./validacionRegistro.js";
 
 
 //Variables
-const Administrador = new Contacto ('Santiago', 'Rodriguez', 'Santirod7','santiara010@gmail.com','3813566953','santi123','hola')
-console.log(Administrador)
+const Administrador = new Contacto ('Santiago', 'Rodriguez', 'Santirod7','santiara010@gmail.com','3813566953','santi123')
 
 //Variables Registro
 const formularioRegistro = document.getElementById('formRegistro');
